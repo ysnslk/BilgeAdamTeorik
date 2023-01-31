@@ -1,0 +1,17 @@
+package com.yasinsolak;
+
+import java.util.Scanner;
+
+public class KullanicidanVeriAlmaScanner {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Lütfen bir sayı giriniz :");
+		int sayi1 = 0;
+		
+		
+	}
+
+}

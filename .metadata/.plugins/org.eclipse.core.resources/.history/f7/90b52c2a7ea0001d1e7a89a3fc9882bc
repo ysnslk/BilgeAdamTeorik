@@ -1,0 +1,11 @@
+package com.yasinsolak;
+
+public class KullanicidanVeriAlmaScanner {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+
+	}
+
+}

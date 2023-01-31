@@ -1,0 +1,15 @@
+package com.yasinsolak;
+
+public class VeriTipleriOndalikSayilar {
+
+	public static void main(String[] args) {
+		
+		//float : 4 Byte
+		//Precision (Noktadan sonraki hassasiyet  : 7 decimal (ondalık ) digits
+		//Bilimsel hesaplamalarda kullanırsanız veri kaybedebliirsiniz
+		//Fizikçiler veya kimyacılar atomla molekülle uğraşanlar kullanmaz
+		
+
+	}
+
+}

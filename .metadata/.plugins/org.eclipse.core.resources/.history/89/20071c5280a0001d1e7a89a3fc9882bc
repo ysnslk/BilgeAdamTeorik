@@ -1,0 +1,24 @@
+package com.yasinsolak;
+
+import java.util.Scanner;
+
+public class KosulluDurumlar {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+
+		int x = input.nextInt();
+
+		// Kullanıcın girdiği sayının pozitif , negatif veya 0 olduğıunu bulan kod
+		if (x > 0) {
+			System.out.println("Girilien Sayı Pozitiftir");
+		} else if (x < 0) {
+			System.out.println("Girilien Sayı Negatiftir");
+		} else {
+			System.out.println("Girilien Sayı Nötr");
+		}
+
+	}
+
+}

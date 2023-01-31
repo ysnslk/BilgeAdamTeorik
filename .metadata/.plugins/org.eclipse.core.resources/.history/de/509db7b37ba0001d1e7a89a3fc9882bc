@@ -1,0 +1,18 @@
+package com.yasinsolak;
+
+public class VeriTipleriOndalikSayilar {
+
+	public static void main(String[] args) {
+		
+		//float : 4 Byte
+		//Precision (Noktadan sonraki hassasiyet  : 7 decimal (ondalık ) digits
+		//Bilimsel hesaplamalarda kullanırsanız veri kaybedebliirsiniz
+		//Fizikçiler veya kimyacılar atomla molekülle uğraşanlar kullanmaz
+		float floatValue = 1.2F;
+		System.out.println("FloatValue : "+floatValue);
+		System.out.println("Float Min :"+Float.MIN_VALUE);
+		System.out.println("Float Max :"+Float.MAX_VALUE);
+
+	}
+
+}
