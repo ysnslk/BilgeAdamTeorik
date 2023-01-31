@@ -1,0 +1,91 @@
+package com.yasinsolak;
+
+public class VeriTipleriBoolean {
+
+	public static void main(String[] args) {
+
+		// bool veri tipi :
+		// 1bitlik yer kaplar
+		// Açık-Kapalı, doğrı-yanlış, 1-0 , ....
+
+		// Boolean olarak neler tutabiliriz ?
+		/*
+		 * Bir kullanıcın sistemde aktif olup olmadığını kontrol eder.(online offline)
+		 */
+		boolean boolDegisken;
+		boolDegisken = true; // true veya false olarak sadece 2 değer alır.
+		System.out.println(boolDegisken);
+
+		boolean agirMi = false; // initialize - ilk değer verme
+		int agirlik = 85;
+		agirMi = (agirlik >= 85);
+		System.out.println("Ağır Mı :" + agirMi);
+
+		// == != >= <= < > 
+		
+		boolean durum = agirlik == 50;
+		System.out.println("Durum: "+ durum);
+		
+		durum = agirlik !=50 ;
+		System.out.println("Durum: "+ durum);
+		
+		int boy = 180;
+		boolean uzunKilolu = (boy >=180 && agirlik >=85);
+		System.out.println("Şahış Uzun ve Kilolu Mu ? "+ uzunKilolu);
+		
+		
+		//Soru :
+		char cinsiyet = 'K'; // 'E'
+		if(uzunKilolu && cinsiyet == 'K') {
+			System.out.println("Şahış kadın ,uzun ve kilolu");
+		}
+		
+		
+		//if => Ternary Kullanımı
+		
+		int yas = 19;
+		String deger;
+		if(yas >= 18) {
+			deger = "Yetişkin";
+		}
+		else {
+			deger = "Yetişkin değil";
+		}
+		System.out.println(deger);
+		
+		//Yukardaki işlemin Ternary ile yapılması 
+		yas = 11;
+		deger = yas >=18 ? "Yetiskin" : "Yetişkin değil";
+		System.out.println(deger);
+		
+		
+		//Microsoft USA'nın mülakatında sorduğu sınav sorusu (SWAP numbers Questions)
+		//3. değişken kullanmadan sayi1 ve sayi2 sayılarını birbirine esit olacak sekilde değiştirin.
+		int sayi1 = 3;
+		int sayi2 = 5;
+		sayi1 = sayi1 - sayi1 + sayi2;
+		sayi2 = sayi2 -sayi2 + sayi1;
+		System.out.println(sayi1);
+		System.out.println(sayi2);
+	  
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
