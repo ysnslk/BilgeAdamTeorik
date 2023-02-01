@@ -1,0 +1,24 @@
+package com.yasinsolak;
+
+import java.util.Scanner;
+
+public class StringDetay {
+
+	public static void main(String[] args) {
+//		String metin = "Merhaba Nasılsın?";
+//		Scanner sc = new Scanner(System.in);
+//		metin = sc.nextLine();
+//		System.out.println(metin);
+
+		
+		//{'B','u','g','u','n',' ','J','a','v','a',' ','i','l','e',..,'z'}
+		String metin = "Bugün Java ile string konusunu işleyeceğiz";
+		
+		
+		
+		
+		
+		
+	}
+
+}

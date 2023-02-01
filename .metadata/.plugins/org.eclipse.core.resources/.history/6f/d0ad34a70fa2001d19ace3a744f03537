@@ -1,0 +1,15 @@
+package com.yasinsolak;
+
+import java.util.Scanner;
+
+public class StringDetay {
+
+	public static void main(String[] args) {
+		String metin = "Merhaba Nasılsın?";
+		Scanner sc = new Scanner(System.in);
+		metin = sc.nextLine();
+		System.out.println(metin);
+
+	}
+
+}

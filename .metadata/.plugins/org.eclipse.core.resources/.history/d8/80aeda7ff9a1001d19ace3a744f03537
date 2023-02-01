@@ -1,0 +1,38 @@
+package com.yasinsolak;
+
+public class DongulerFor {
+
+	public static void main(String[] args) {
+		
+//		System.out.println("Merhaba 0");
+//		System.out.println("Merhaba 1");
+//		System.out.println("Merhaba 2");
+//		System.out.println("Merhaba 3");
+		
+		/*
+		 * Bir şeyi n kere yazdıracaksam kaç kere saydığımı  kontrol edebilmek için bir
+		 * değişkene ihtiyaç var. o değişken de genelde for döngülerinde i ve j isminde
+		 * tutulur.
+		 */
+		
+		for(int i=0;i<4;i++) {
+			System.out.println("Merhaba "+ i);
+			
+		}
+		
+		
+		for(int sayac=0;sayac<3;sayac++) {
+			System.out.println("Merhaba");
+			System.out.println("Java");
+			
+		}
+		
+		System.out.println("\n*****\n");
+		
+		
+		
+		
+		
+	}
+
+}

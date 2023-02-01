@@ -1,0 +1,12 @@
+package com.yasinsolak;
+
+public class StringDetay {
+
+	public static void main(String[] args) {
+		String metin = "Merhaba Nasılsın?";
+		Scanner sc = new Scanner(System.in);
+		System.out.println(metin);
+
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.yasinsolak;
+
+public class DongulerBreakContinue {
+
+	public static void main(String[] args) {
+		/*
+		 * break :
+		 * Döngünün akışını durdurur ve } sonrasındaki koda gider.
+		 */
+		
+		
+		for(int i =0;i<10;i++) {
+			if(i==5) {
+				break;
+			}
+			System.out.println(i);
+		}
+
+	}
+
+}
