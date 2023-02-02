@@ -321,14 +321,7 @@ public class StringDetay {
 		
 		//Çok dikkatli olmak gerek
 		//String karşılaştırmalarında equals kullanılmalı
-		//Sınavlarda-mülakatlarda çok sorulur
 		
-		if(w.equals(x)) {
-			System.out.println("Eşit");
-		}
-		else {
-			System.out.println("Eşit Değil");
-		}
 		
 		
 		

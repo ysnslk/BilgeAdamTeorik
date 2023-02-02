@@ -289,46 +289,17 @@ public class StringDetay {
 		
 		System.err.println("\n*************\n");
 		
-		String x = "Ali";
-		String y = "Veli";
-		
-		if(x==y) {
-			System.out.println("Eşit");
-		}
-		else {
-			System.out.println("Eşit Değil");
-		}
-		
-		String z ="Ali";
-		if(x==z) {
-			System.out.println("Eşit");
-		}
-		else {
-			System.out.println("Eşit Değil");
-		}
 		
 		
-		String w = "Ali ".trim();
-
-		System.out.println(w);
 		
-		if(x==w) {
-			System.out.println("w ve x Eşit");
-		}
-		else {
-			System.out.println("w ve x Eşit Değil");
-		}
 		
-		//Çok dikkatli olmak gerek
-		//String karşılaştırmalarında equals kullanılmalı
-		//Sınavlarda-mülakatlarda çok sorulur
 		
-		if(w.equals(x)) {
-			System.out.println("Eşit");
-		}
-		else {
-			System.out.println("Eşit Değil");
-		}
+		
+		
+		
+		
+		
+		
 		
 		
 		
