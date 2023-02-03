@@ -1,0 +1,47 @@
+package com.yasinsolak;
+
+public class Diziler {
+
+	public static void main(String[] args) {
+		
+		//tam sayı dizisi: =>{1 , 7 , 12 , 39 , 55 , 88 , 91}
+		//metin dizisi =>{"ali" , "veli" , "ayşe" , "ahmet"}
+		
+		//dizi tanımlama:
+		//dizinin cinsi önce yazılır byte,short,int,float sonra []
+
+		
+		long[] dizi1;
+		
+		//Kural dizileri initialize etmeden onları kullanamazsınız.
+		
+		dizi1 = new long[7]; //Siz böyle yazdığınızda java arkaplanda
+							 //{0,0,0,0,0,0,0}
+		
+		System.out.println(dizi1[0]); //Unutmayalım dizilerin ilk indexi 0
+		System.out.println(dizi1[dizi1.length-1]);
+		System.out.println(dizi1.length);
+
+		
+		//Dikkat :
+		//Dikkat dizi boyutundan büyük indexe ulaşamazsın hata verir
+		System.out.println(dizi1[6]);
+		
+		
+		//dizilere atama yapmak
+		dizi1[0]=10;
+		dizi1[1]=15;
+		dizi1[6]=28;
+		System.out.println(dizi1[1]);
+		System.out.println("\n\n");
+		
+		//Dizilerin değerleri okunurken genelde for loop kullanılır
+		for(int i=0;i<7;i++){
+			System.out.println(dizi1[i]);
+		}
+		
+		//Yukarıdaki yöntem yerine son dğer olarak dizinin length'in kullanın
+		
+	}
+
+}

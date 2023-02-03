@@ -1,0 +1,12 @@
+package com.yasinsolak;
+
+public class DiziOrnekleri {
+
+	public static void main(String[] args) {
+
+		//Soru
+		int[] dizi = {-4,7,12,78,-32,122,0,9};
+
+	}
+
+}
