@@ -2,5 +2,11 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.lang.Long"/>
+    <fullyQualifiedTypeName name="com.alikaya.YardimciSinif"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Main"/>
+    <fullyQualifiedTypeName name="java.nio.file.spi.FileSystemProvider"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.SinifStaticDegiskenlerTest"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.SinifStaticDegiskenler"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
