@@ -4,6 +4,10 @@ public class Kutu {
 	
 	
 	public int hacim;
+	public String kutununAdi;
+	public String sahibininAdi;
+	public String kutununGideceğiAdres;
+	
 	
 	public void degistir(int sayi) {
 		hacim = sayi;
