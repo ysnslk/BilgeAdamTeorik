@@ -12,27 +12,28 @@ public class Otomobil {
 	private int aracinKm;
 	private Motor motor;// Otomobil sınıfının içinde farklı bir sınıf nesnesini üye değişken olarak
 						// tutuyorum.
+	private int depodakiYakit;
+	private final int depoHacmi;
 
 	// Parametre : Bir metodu parantez içindeki alığı değişkenlere denir.
-	public Otomobil(String marka, String model, int yil, int aracinKm, Motor motor) {
+	public Otomobil(String marka, String model, int yil, int aracinKm, Motor motor, int depoHacmi) {
 		this.setMarka(marka);
 		this.setModel(model);
 		this.setYil(yil);
 		this.setAracinKm(aracinKm);
 		this.setMotor(motor);
+		this.depoHacmi = 0;
 	}
 
-	public Otomobil(String marka,String model) {
+	public Otomobil(String marka, String model, int yil, int aracinKm, int motorHacmi, String saseNo, int yakitTuketimi,
+			int depodakiYakit, int depoHacmi) {
 		this.setMarka(marka);
 		this.setModel(model);
-	}
-
-	
-	
-	public Otomobil(String model, int yil, Motor motor) {
-		this.setModel(model);
 		this.setYil(yil);
-		this.setMotor(motor);
+		this.setAracinKm(aracinKm);
+		this.motor = new Motor(motorHacmi, saseNo, yakitTuketimi);
+		this.depoHacmi = depoHacmi;
+		this.depodakiYakit = 0;
 	}
 
 	public void araciSur(int km) {
@@ -85,10 +86,22 @@ public class Otomobil {
 
 	}
 
+	public int getDepodakiYakit() {
+		return depodakiYakit;
+	}
+
+	public void setDepodakiYakit(int depodakiYakit) {
+		this.depodakiYakit = depodakiYakit;
+	}
+
+	public int getDepoHacmi() {
+		return depoHacmi;
+	}
+
 	@Override
 	public String toString() {
 		return "Otomobil [marka=" + marka + ", model=" + model + ", yil=" + yil + ", aracinKm=" + aracinKm + ", motor="
-				+ motor + "]";
+				+ motor + ", depodakiYakit=" + depodakiYakit + ", depoHacmi=" + depoHacmi + "]";
 	}
 
 }
