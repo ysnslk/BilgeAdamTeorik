@@ -3,7 +3,6 @@
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="java.lang.Long"/>
     <fullyQualifiedTypeName name="com.alikaya.YardimciSinif"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.Main"/>
     <fullyQualifiedTypeName name="java.nio.file.spi.FileSystemProvider"/>
     <fullyQualifiedTypeName name="com.yasinsolak.SinifStaticDegiskenlerTest"/>
     <fullyQualifiedTypeName name="com.yasinsolak.SinifStaticDegiskenler"/>
@@ -18,4 +17,9 @@
     <fullyQualifiedTypeName name="com.yasinsolak.Kutu"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Otomobil"/>
     <fullyQualifiedTypeName name="com.yasinsolak.OtoGaleri"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Sekreter"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Main"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
 </qualifiedTypeNameHistroy>
