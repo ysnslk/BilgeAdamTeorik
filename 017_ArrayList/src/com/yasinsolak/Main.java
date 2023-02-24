@@ -16,6 +16,16 @@ public class Main {
 
 	}
 
+	private static void printList(List<String> list) {
+
+		System.out.println("\n--------\n");
+		for (String name : list) {
+			// System.out.println(kisi.getAd()+" "+kisi.getSoyad());
+			System.out.println(name);
+		}
+
+	}
+
 	public static void main(String[] args) {
 
 		// ArrayList<String> cars = new ArrayList<String>();
@@ -80,7 +90,33 @@ public class Main {
 		for (String s : l) {
 			System.out.println(s);
 		}
+		System.out.println();
+		l.add(1, "Ayşe");
+		for (String s : l) {
+			System.out.println(s);
+		}
 
+		System.out.println(l.get(1));
+		System.out.println("\n-------------\n");
+		List<String> linkedList = new LinkedList<String>();
+		linkedList.add("John");
+		linkedList.add("Barbara");
+		linkedList.remove("John");
+		printList(linkedList);
+
+		// System.out.println(linkedList);
+
+		Main.printList(linkedList);
+		Main.printList(cars);
+
+		linkedList.remove("John");
+		Main.printList(linkedList);
+
+		System.out.println(linkedList.get(0));
+
+		// Araya eleman ekleme
+		linkedList.add(1, "Robert");
+		Main.printList(linkedList);
 	}
 
 	private static List<String> listeOlustur() {
@@ -94,5 +130,17 @@ public class Main {
 		list.add("Veli");
 		return list;
 	}
+
+	// Linked List
+
+	// Arraylist hızlı random erişimi sağlar.
+	// Dizinin içindeki herhangi bir elemanı sabit sürede getirir.
+	// Ancak arraylis e aradan eleman ekleme veya çıkarma gibi işlemler
+	// çok uzun vakit alır.
+
+	// Linklistlerde ise araya eleman ekleme veya silme arraylislere göre çok daha
+	// hızlı olur.
+	// Ancak Linkedlist belirli bir indexteki eleman erişim hızında Arraylisete göre
+	// yavaş kalır.
 
 }

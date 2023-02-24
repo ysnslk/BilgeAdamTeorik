@@ -18,8 +18,9 @@
     <fullyQualifiedTypeName name="com.yasinsolak.Otomobil"/>
     <fullyQualifiedTypeName name="com.yasinsolak.OtoGaleri"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Sekreter"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Main"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Ogrenci"/>
 </qualifiedTypeNameHistroy>
