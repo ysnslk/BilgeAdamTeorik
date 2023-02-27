@@ -45,9 +45,26 @@ public class Main {
 //		okul.okuldanSinifCikar("1D");
 //		okul.siniflariYazdir();
 		okul.okuldakiOgrencileriYazdir();
-		
+
 		okul.okuldanSinifCikarIterators("1C");
 		okul.siniflariYazdir();
+
+		Okul okul2 = new Okul("Aaaaa", "Eskişehir");
+		okul2.sinifEkle(new Sinif("1A", "Zemin Kat 105"));
+		okul2.sinifEkle(new Sinif("1B", "Zemin Kat 105"));
+
+		Sinif snf = okul2.getSinif("1A");
+		if (snf != null) {
+			snf.sinifaOgrenciEkle("Tolga", "Kaya", 111, 0);
+			snf.sinifaOgrenciEkle("Mustafa", "Kaya", 112, 0);
+		}
+		else {
+			System.out.println("Sınıf Bulunamadı!!!!");
+		}
+		
+		okul2.okuldakiOgrencileriYazdir();
+		
+
 	}
 
 }

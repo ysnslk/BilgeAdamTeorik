@@ -26,6 +26,17 @@ public class Okul {
 		}
 	}
 
+	// Parametre olarak sinifAdi girilien ve sonuçta ilgili sınıf listesini getiren
+	// metod yaz
+	public Sinif getSinif(String sinifAdi) {
+		for (Sinif sinif : siniflarList) {
+			if(sinif.getSinifAdi().equalsIgnoreCase(sinifAdi)) {
+				return sinif;
+			}
+		}
+		return null;
+	}
+
 	public void sinifEkle(Sinif sinif) {
 		this.siniflarList.add(sinif);
 	}

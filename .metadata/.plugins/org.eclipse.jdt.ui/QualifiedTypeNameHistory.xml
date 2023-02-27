@@ -8,7 +8,6 @@
     <fullyQualifiedTypeName name="com.yasinsolak.SinifStaticDegiskenler"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Anahtar"/>
-    <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Dikdortgen"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Kare"/>
@@ -23,4 +22,16 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Ogrenci"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.INemOlcer"/>
+    <fullyQualifiedTypeName name="java.lang.Iterable"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.ITermometre"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.ITarihSaatGoster"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Casio"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Guvercin"/>
+    <fullyQualifiedTypeName name="javax.swing.JTree.DynamicUtilTreeNode"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.AnkaraKedisi"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.IUcabilir"/>
+    <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.GoldeRetriever"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.IYirticiHayvan"/>
 </qualifiedTypeNameHistroy>
