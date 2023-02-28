@@ -19,7 +19,6 @@
     <fullyQualifiedTypeName name="com.yasinsolak.Sekreter"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Main"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Ogrenci"/>
     <fullyQualifiedTypeName name="com.yasinsolak.INemOlcer"/>
@@ -34,4 +33,11 @@
     <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
     <fullyQualifiedTypeName name="com.yasinsolak.GoldeRetriever"/>
     <fullyQualifiedTypeName name="com.yasinsolak.IYirticiHayvan"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.MainKisiOrnek"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.Objects"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Kisi"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
 </qualifiedTypeNameHistroy>

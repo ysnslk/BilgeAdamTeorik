@@ -1,7 +1,7 @@
 package com.yasinsolak;
 
-public class GoldeRetriever extends Hayvan implements IYirticiHayvan{
-	
+public class GoldeRetriever extends Hayvan implements IYirticiHayvan, IKuyrukluHayvan {
+
 	public GoldeRetriever(String ad, int kilo, int uzunluk) {
 		super(ad, kilo, uzunluk);
 	}
@@ -18,8 +18,14 @@ public class GoldeRetriever extends Hayvan implements IYirticiHayvan{
 
 	@Override
 	public void saldir(String nesne) {
-		System.out.println(this.getAd()+" isimli Golden "+nesne +"ye/ya saldırıyor.");
-		
+		System.out.println(this.getAd() + " isimli Golden " + nesne + "ye/ya saldırıyor.");
+
+	}
+
+	@Override
+	public void kuyrukSalla() {
+		System.out.println("Köpek " + this.getAd() + " kuyruk sallıyor.");
+
 	}
 
 }

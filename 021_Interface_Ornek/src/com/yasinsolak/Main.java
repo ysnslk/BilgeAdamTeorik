@@ -22,10 +22,22 @@ public class Main {
 	}
 
 	public static IYirticiHayvan yirticiHayvanOlustur() {
-		IYirticiHayvan yirticiHayvan = new Kartal("Amerikan Kartalı",55,88);
+		IYirticiHayvan yirticiHayvan = new Kartal("Amerikan Kartalı", 55, 88);
 		return yirticiHayvan;
 	}
-	
+
+	public static void belirtilenSureKadarKuyruksalla(IKuyrukluHayvan kuyrukluHayvan, int saniye) {
+		System.out.println("\n*****\n");
+		for (int i = 0; i < saniye; i++) {
+			kuyrukluHayvan.kuyrukSalla();
+			try {
+				Thread.sleep(1000);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 
 		// IUcabilir beyazPacaliGuvercin = new Guvercin("Beyaz Paçalı", 1, 12);
@@ -50,8 +62,12 @@ public class Main {
 		Main.yirticiSaldirisi(kartal);
 		Main.yirticiSaldirisi(new GoldeRetriever("Goldie", 40, 100));
 
-		IYirticiHayvan yHayvan =Main.yirticiHayvanOlustur();
+		IYirticiHayvan yHayvan = Main.yirticiHayvanOlustur();
 		yHayvan.saldir("Fare");
+		
+		
+		//Kuyruk Salla
+		Main.belirtilenSureKadarKuyruksalla(kedi, 4);
 	}
 
 }
