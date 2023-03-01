@@ -48,7 +48,7 @@ public class Soru1 {
 		 * ekran yazdıran bir metod yazınız.
 		 */
 
-		String metin = "Herkese merhaba iyi çalışmalar";
+		String metin = "Hderkese merhaba iyi çalışmalar";
 
 		Soru1.harfSayisiniBul(metin);
 		Soru1.enCokTekrarEdenHarfiBul(metin);
