@@ -8,7 +8,6 @@
     <fullyQualifiedTypeName name="com.yasinsolak.SinifStaticDegiskenler"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Anahtar"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Dikdortgen"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Kare"/>
     <fullyQualifiedTypeName name="com.alikaya.ParalelKenar"/>
@@ -39,10 +38,8 @@
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.Collection"/>
     <fullyQualifiedTypeName name="com.yasinsolak.MainOgrenciLise"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Main"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.Vector"/>
     <fullyQualifiedTypeName name="java.util.ListIterator"/>
     <fullyQualifiedTypeName name="java.util.Stack"/>
@@ -50,4 +47,16 @@
     <fullyQualifiedTypeName name="java.util.Queue"/>
     <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
     <fullyQualifiedTypeName name="java.lang.Comparable"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.controller.OgrenciController"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.repository.OgrenciRepository"/>
+    <fullyQualifiedTypeName name="javax.xml.crypto.Data"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.repository.entity.Ogrenci"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.repository.entity.Ogretmen"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.repository.OgretmenRepository"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.utility.DataBase"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.MainEnumOrnek"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.MainEnumOrnek.Mevsimler"/>
 </qualifiedTypeNameHistroy>
