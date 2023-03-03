@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="java.lang.Long"/>
-    <fullyQualifiedTypeName name="com.alikaya.YardimciSinif"/>
-    <fullyQualifiedTypeName name="java.nio.file.spi.FileSystemProvider"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.SinifStaticDegiskenlerTest"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.SinifStaticDegiskenler"/>
-    <fullyQualifiedTypeName name="java.util.Random"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.Anahtar"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.Dikdortgen"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Kare"/>
     <fullyQualifiedTypeName name="com.alikaya.ParalelKenar"/>
     <fullyQualifiedTypeName name="com.alikaya.Ucgen"/>
@@ -49,7 +40,6 @@
     <fullyQualifiedTypeName name="java.lang.Comparable"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.yasinsolak.controller.OgrenciController"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="com.yasinsolak.repository.OgrenciRepository"/>
     <fullyQualifiedTypeName name="javax.xml.crypto.Data"/>
     <fullyQualifiedTypeName name="com.yasinsolak.repository.entity.Ogrenci"/>
@@ -59,4 +49,15 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.yasinsolak.MainEnumOrnek"/>
     <fullyQualifiedTypeName name="com.yasinsolak.MainEnumOrnek.Mevsimler"/>
+    <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+    <fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.io.IOError"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.AsiriHizException"/>
+    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.CarpmaLimitException"/>
 </qualifiedTypeNameHistroy>
