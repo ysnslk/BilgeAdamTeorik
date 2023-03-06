@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.yasinsolak.Kare"/>
-    <fullyQualifiedTypeName name="com.alikaya.ParalelKenar"/>
-    <fullyQualifiedTypeName name="com.alikaya.Ucgen"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.Kutu"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.Otomobil"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.OtoGaleri"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Sekreter"/>
     <fullyQualifiedTypeName name="java.util.LinkedList"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Ogrenci"/>
@@ -17,7 +11,6 @@
     <fullyQualifiedTypeName name="com.yasinsolak.Guvercin"/>
     <fullyQualifiedTypeName name="javax.swing.JTree.DynamicUtilTreeNode"/>
     <fullyQualifiedTypeName name="com.yasinsolak.AnkaraKedisi"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.IUcabilir"/>
     <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
     <fullyQualifiedTypeName name="com.yasinsolak.GoldeRetriever"/>
     <fullyQualifiedTypeName name="com.yasinsolak.IYirticiHayvan"/>
@@ -25,7 +18,6 @@
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.util.Objects"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Kisi"/>
-    <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.Collection"/>
     <fullyQualifiedTypeName name="com.yasinsolak.MainOgrenciLise"/>
@@ -38,7 +30,6 @@
     <fullyQualifiedTypeName name="java.util.Queue"/>
     <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
     <fullyQualifiedTypeName name="java.lang.Comparable"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.yasinsolak.controller.OgrenciController"/>
     <fullyQualifiedTypeName name="com.yasinsolak.repository.OgrenciRepository"/>
     <fullyQualifiedTypeName name="javax.xml.crypto.Data"/>
@@ -46,7 +37,6 @@
     <fullyQualifiedTypeName name="com.yasinsolak.repository.entity.Ogretmen"/>
     <fullyQualifiedTypeName name="com.yasinsolak.repository.OgretmenRepository"/>
     <fullyQualifiedTypeName name="com.yasinsolak.utility.DataBase"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.yasinsolak.MainEnumOrnek"/>
     <fullyQualifiedTypeName name="com.yasinsolak.MainEnumOrnek.Mevsimler"/>
     <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
@@ -60,4 +50,14 @@
     <fullyQualifiedTypeName name="com.yasinsolak.AsiriHizException"/>
     <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
     <fullyQualifiedTypeName name="com.yasinsolak.CarpmaLimitException"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.IUcabilir"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+    <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
 </qualifiedTypeNameHistroy>
