@@ -110,18 +110,19 @@ public class Main {
 		}
 	}
 
-	public static void dosyaninBelirtilenKisminiOku() {
+	public static void dosyaninBelirtilenKisminiOku(String dosyaAdi) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Kaçıncı karakterden başlasın");
 		int start = sc.nextInt();
 		System.out.println("Kaç karakter yazsın");
-		int howMuch = sc.nextInt();
+		int kac = sc.nextInt();
+		int okunan;
 		FileInputStream fileInputStream = null;
 		try {
-			fileInputStream = new FileInputStream("dosya.txt");
+			fileInputStream = new FileInputStream(dosyaAdi);
 
-			fileInputStream.skip(start-1);
-			for (int i = 0; i < howMuch; i++) {
+			fileInputStream.skip(start - 1);
+			for (int i = 0; i < kac; i++) {
 				System.out.print((char) fileInputStream.read());
 			}
 			System.out.println();
@@ -150,8 +151,8 @@ public class Main {
 
 		// dosyadanTekbirByteOkuma();
 		// dosyaninOrtasindanByteOkuma();
-		//dosyaninTumunuOkuma();
-		dosyaninBelirtilenKisminiOku();
+		// dosyaninTumunuOkuma();
+		dosyaninBelirtilenKisminiOku("dosya.txt");
 
 		/*
 		 * Ödev : Bir metod yazınız Bir dosyanın n. karakterinden başlayıp m tane
