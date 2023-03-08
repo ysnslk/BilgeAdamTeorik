@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Iterable"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.ITermometre"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.ITarihSaatGoster"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.Casio"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.Guvercin"/>
-    <fullyQualifiedTypeName name="javax.swing.JTree.DynamicUtilTreeNode"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.AnkaraKedisi"/>
-    <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.GoldeRetriever"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.IYirticiHayvan"/>
     <fullyQualifiedTypeName name="com.yasinsolak.MainKisiOrnek"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="java.util.Objects"/>
@@ -50,9 +40,6 @@
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="com.yasinsolak.IUcabilir"/>
     <fullyQualifiedTypeName name="java.io.File"/>
-    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
-    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.io.FileReader"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
@@ -60,4 +47,17 @@
     <fullyQualifiedTypeName name="java.io.FileWriter"/>
     <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
     <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.awt.image.AbstractMultiResolutionImage"/>
+    <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
+    <fullyQualifiedTypeName name="java.io.EOFException"/>
+    <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
+    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Motor"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Otomobil"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Ogrenci"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
