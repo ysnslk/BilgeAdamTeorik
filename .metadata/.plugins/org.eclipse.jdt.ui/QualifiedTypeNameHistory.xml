@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.yasinsolak.MainKisiOrnek"/>
-    <fullyQualifiedTypeName name="java.util.HashSet"/>
-    <fullyQualifiedTypeName name="java.util.Objects"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.Kisi"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
-    <fullyQualifiedTypeName name="java.util.Collection"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.MainOgrenciLise"/>
-    <fullyQualifiedTypeName name="java.util.Collections"/>
-    <fullyQualifiedTypeName name="com.yasinsolak.Main"/>
-    <fullyQualifiedTypeName name="java.util.Vector"/>
-    <fullyQualifiedTypeName name="java.util.ListIterator"/>
-    <fullyQualifiedTypeName name="java.util.Stack"/>
-    <fullyQualifiedTypeName name="javax.management.Query"/>
-    <fullyQualifiedTypeName name="java.util.Queue"/>
     <fullyQualifiedTypeName name="java.util.PriorityQueue"/>
     <fullyQualifiedTypeName name="java.lang.Comparable"/>
     <fullyQualifiedTypeName name="com.yasinsolak.controller.OgrenciController"/>
@@ -25,7 +11,6 @@
     <fullyQualifiedTypeName name="com.yasinsolak.utility.DataBase"/>
     <fullyQualifiedTypeName name="com.yasinsolak.MainEnumOrnek"/>
     <fullyQualifiedTypeName name="com.yasinsolak.MainEnumOrnek.Mevsimler"/>
-    <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
     <fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
@@ -35,12 +20,10 @@
     <fullyQualifiedTypeName name="com.yasinsolak.AsiriHizException"/>
     <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
     <fullyQualifiedTypeName name="com.yasinsolak.CarpmaLimitException"/>
-    <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="com.yasinsolak.IUcabilir"/>
     <fullyQualifiedTypeName name="java.io.File"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.io.FileReader"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
@@ -59,5 +42,22 @@
     <fullyQualifiedTypeName name="com.yasinsolak.Motor"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Otomobil"/>
     <fullyQualifiedTypeName name="com.yasinsolak.Ogrenci"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.GenericSinif"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Kare"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.GeometrikAlan"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Circle"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Main"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Dikdortgen"/>
+    <fullyQualifiedTypeName name="java.nio.file.DirectoryIteratorException"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.ArrayBlockingQueue"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.ListIterator"/>
+    <fullyQualifiedTypeName name="java.util.ListIterator"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="com.yasinsolak.Yazici"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
 </qualifiedTypeNameHistroy>
