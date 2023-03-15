@@ -2,7 +2,7 @@ package com.yasinsolak;
 
 public class ThreadSafeMain {
 
-	private int count;
+	private int count = 0;
 
 	//Sync metodları aynı anda sadece 1 tane thread çalıştırabilir
 	//Oda anahtar mekanizması gibi düşünün.İlk giren thread odayı kitler
@@ -48,7 +48,13 @@ public class ThreadSafeMain {
 
 		System.out.println("Count değişkeninin son değeri : " + count);
 		ThreadSafeMain main = new ThreadSafeMain();
-			main.threadleriCalistir();
+			 main.threadleriCalistir();
+	}
+	
+	public static void main(String[] args) {
+		ThreadSafeMain main = new ThreadSafeMain();
+		main.threadleriCalistir();
+
 	}
 
 }
