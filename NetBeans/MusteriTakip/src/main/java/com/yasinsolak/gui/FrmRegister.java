@@ -43,7 +43,7 @@ public class FrmRegister extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         lblError = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
         jPanel1.setForeground(new java.awt.Color(0, 0, 255));
@@ -115,7 +115,7 @@ public class FrmRegister extends javax.swing.JFrame {
                         .addComponent(txtRepass)
                         .addComponent(txtPass)
                         .addComponent(txtUsername)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,20 +140,18 @@ public class FrmRegister extends javax.swing.JFrame {
                 .addComponent(txtEMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -162,6 +160,13 @@ public class FrmRegister extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
+            if (txtUsername.getText().isEmpty() || txtEMail.getText().isEmpty() || txtPass.getText().isEmpty() || txtRepass.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(rootPane, "Lütfen Alanları doldurunuz");
+                return;
+            } else if (!txtPass.getText().toString().equals(txtRepass.getText().toString())) {
+                JOptionPane.showMessageDialog(rootPane, "Şifreler uyuşmuyor");
+                return;
+            }
             String username = txtUsername.getText();
             String pwd = txtPass.getText();
             String email = txtEMail.getText();
@@ -173,6 +178,9 @@ public class FrmRegister extends javax.swing.JFrame {
             txtPass.setText("");
             txtRepass.setText("");
             txtEMail.setText("");
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.setVisible(true);
+             this.dispose();
 
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -181,22 +189,21 @@ public class FrmRegister extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void txtPassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPassKeyReleased
-        if (txtPass.getText().toString().equals(txtRepass.getText().toString())) {
+    private void kontrolEt() {
+        if (txtPass.getText().toString().equals(txtRepass.getText().toString())
+                && !txtPass.getText().isEmpty()
+                && !txtRepass.getText().isEmpty()) {
             lblError.setVisible(false);
-        }
-        else{
+        } else {
             lblError.setVisible(true);
         }
+    }
+    private void txtPassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPassKeyReleased
+        kontrolEt();
     }//GEN-LAST:event_txtPassKeyReleased
 
     private void txtRepassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRepassKeyReleased
-       if (txtPass.getText().toString().equals(txtRepass.getText().toString())) {
-            lblError.setVisible(false);
-        }
-        else{
-            lblError.setVisible(true);
-        }
+        kontrolEt();
     }//GEN-LAST:event_txtRepassKeyReleased
 
     /**

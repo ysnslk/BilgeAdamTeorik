@@ -27,20 +27,207 @@ public class MainPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        IslemlerPopup = new javax.swing.JPopupMenu();
+        btnDuzenle = new javax.swing.JMenuItem();
+        btnSil = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        Sec = new javax.swing.JMenuItem();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        comboGender = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtAdres = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        btnSave = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        btnNew = new javax.swing.JButton();
+        txtPhone = new javax.swing.JFormattedTextField();
+        TxtSearchName = new javax.swing.JTextField();
+        txtSearchPhone = new javax.swing.JTextField();
+        txtSearchAdres = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        btnDuzenle.setText("Düzenle");
+        IslemlerPopup.add(btnDuzenle);
+
+        btnSil.setText("Sil");
+        IslemlerPopup.add(btnSil);
+        IslemlerPopup.add(jSeparator1);
+
+        Sec.setText("Seç");
+        IslemlerPopup.add(Sec);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ana Sayfa");
+        setBackground(new java.awt.Color(153, 153, 153));
+
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Id");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 24, -1, -1));
+
+        txtId.setBackground(new java.awt.Color(255, 255, 255));
+        txtId.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 67, 136, -1));
+
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Telefon");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 24, -1, -1));
+
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Cinsiyet");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 24, -1, -1));
+
+        comboGender.setBackground(new java.awt.Color(255, 255, 255));
+        comboGender.setForeground(new java.awt.Color(0, 0, 0));
+        comboGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Belirtiniz", "Erkek", "Kadın" }));
+        jPanel1.add(comboGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(363, 67, 163, -1));
+
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Ad");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 137, -1, -1));
+
+        txtName.setBackground(new java.awt.Color(255, 255, 255));
+        txtName.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 171, 136, -1));
+
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Adres");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 137, -1, -1));
+
+        txtAdres.setBackground(new java.awt.Color(255, 255, 255));
+        txtAdres.setColumns(20);
+        txtAdres.setForeground(new java.awt.Color(0, 0, 0));
+        txtAdres.setRows(5);
+        jScrollPane1.setViewportView(txtAdres);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 171, 329, 47));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\xmeny\\Desktop\\pngegg.png")); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 24, -1, 274));
+
+        btnSave.setBackground(new java.awt.Color(255, 255, 255));
+        btnSave.setForeground(new java.awt.Color(0, 0, 0));
+        btnSave.setIcon(new javax.swing.ImageIcon("C:\\Users\\xmeny\\Desktop\\Java-P\\NetBeans\\MusteriTakip\\src\\main\\java\\com\\yasinsolak\\utilty\\save_24px.png")); // NOI18N
+        btnSave.setText("Kaydet");
+        jPanel1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 262, 139, -1));
+
+        btnCancel.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancel.setForeground(new java.awt.Color(0, 0, 0));
+        btnCancel.setIcon(new javax.swing.ImageIcon("C:\\Users\\xmeny\\Desktop\\Java-P\\NetBeans\\MusteriTakip\\src\\main\\java\\com\\yasinsolak\\utilty\\cancel_24px.png")); // NOI18N
+        btnCancel.setText("İptal");
+        jPanel1.add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 262, 139, -1));
+
+        btnNew.setBackground(new java.awt.Color(255, 255, 255));
+        btnNew.setForeground(new java.awt.Color(0, 0, 0));
+        btnNew.setIcon(new javax.swing.ImageIcon("C:\\Users\\xmeny\\Desktop\\Java-P\\NetBeans\\MusteriTakip\\src\\main\\java\\com\\yasinsolak\\utilty\\Plus_24px.png")); // NOI18N
+        btnNew.setText("Yeni Kayıt");
+        jPanel1.add(btnNew, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 262, 139, -1));
+
+        txtPhone.setBackground(new java.awt.Color(255, 255, 255));
+        txtPhone.setForeground(new java.awt.Color(0, 0, 0));
+        txtPhone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("0(   )-   -"))));
+        jPanel1.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 67, 174, -1));
+
+        TxtSearchName.setBackground(new java.awt.Color(255, 255, 255));
+        TxtSearchName.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(TxtSearchName, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 376, 189, -1));
+
+        txtSearchPhone.setBackground(new java.awt.Color(255, 255, 255));
+        txtSearchPhone.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(txtSearchPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 376, 125, -1));
+
+        txtSearchAdres.setBackground(new java.awt.Color(255, 255, 255));
+        txtSearchAdres.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(txtSearchAdres, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 376, 270, -1));
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Müşteri Ad Soyad", "Telefon", "Cinsiyet", "Adres"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable2.setComponentPopupMenu(IslemlerPopup);
+        jScrollPane3.setViewportView(jTable2);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setResizable(false);
+            jTable2.getColumnModel().getColumn(0).setPreferredWidth(20);
+            jTable2.getColumnModel().getColumn(1).setPreferredWidth(120);
+            jTable2.getColumnModel().getColumn(2).setPreferredWidth(60);
+            jTable2.getColumnModel().getColumn(3).setPreferredWidth(40);
+            jTable2.getColumnModel().getColumn(4).setPreferredWidth(200);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 837, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -82,5 +269,33 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPopupMenu IslemlerPopup;
+    private javax.swing.JMenuItem Sec;
+    private javax.swing.JTextField TxtSearchName;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JMenuItem btnDuzenle;
+    private javax.swing.JButton btnNew;
+    private javax.swing.JButton btnSave;
+    private javax.swing.JMenuItem btnSil;
+    private javax.swing.JComboBox<String> comboGender;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTextArea txtAdres;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JFormattedTextField txtPhone;
+    private javax.swing.JTextField txtSearchAdres;
+    private javax.swing.JTextField txtSearchPhone;
     // End of variables declaration//GEN-END:variables
 }
