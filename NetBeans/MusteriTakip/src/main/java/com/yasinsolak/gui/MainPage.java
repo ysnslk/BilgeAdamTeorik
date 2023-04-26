@@ -1,21 +1,27 @@
 package com.yasinsolak.gui;
 
+import com.yasinsolak.entity.Musteri;
+import com.yasinsolak.service.MusteriService;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author xmeny
  */
 public class MainPage extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmLogin
-     */
+    private MusteriService musteriService;
+
     public MainPage() {
         initComponents();
+        musteriService = new MusteriService();
+        listele();
     }
 
     /**
@@ -49,12 +55,12 @@ public class MainPage extends javax.swing.JFrame {
         btnSave = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         btnNew = new javax.swing.JButton();
-        txtPhone = new javax.swing.JFormattedTextField();
         TxtSearchName = new javax.swing.JTextField();
         txtSearchPhone = new javax.swing.JTextField();
         txtSearchAdres = new javax.swing.JTextField();
+        txtPhone = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblMusteri = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -92,7 +98,8 @@ public class MainPage extends javax.swing.JFrame {
 
         txtId.setBackground(new java.awt.Color(255, 255, 255));
         txtId.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 67, 136, -1));
+        txtId.setEnabled(false);
+        jPanel1.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 136, -1));
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Telefon");
@@ -105,6 +112,7 @@ public class MainPage extends javax.swing.JFrame {
         comboGender.setBackground(new java.awt.Color(255, 255, 255));
         comboGender.setForeground(new java.awt.Color(0, 0, 0));
         comboGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Belirtiniz", "Erkek", "Kadın" }));
+        comboGender.setEnabled(false);
         jPanel1.add(comboGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(363, 67, 163, -1));
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
@@ -113,6 +121,7 @@ public class MainPage extends javax.swing.JFrame {
 
         txtName.setBackground(new java.awt.Color(255, 255, 255));
         txtName.setForeground(new java.awt.Color(0, 0, 0));
+        txtName.setEnabled(false);
         jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 171, 136, -1));
 
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
@@ -123,6 +132,7 @@ public class MainPage extends javax.swing.JFrame {
         txtAdres.setColumns(20);
         txtAdres.setForeground(new java.awt.Color(0, 0, 0));
         txtAdres.setRows(5);
+        txtAdres.setEnabled(false);
         jScrollPane1.setViewportView(txtAdres);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 171, 329, 47));
@@ -134,38 +144,58 @@ public class MainPage extends javax.swing.JFrame {
         btnSave.setForeground(new java.awt.Color(0, 0, 0));
         btnSave.setIcon(new javax.swing.ImageIcon("C:\\Users\\xmeny\\Desktop\\Java-P\\NetBeans\\MusteriTakip\\src\\main\\java\\com\\yasinsolak\\utilty\\save_24px.png")); // NOI18N
         btnSave.setText("Kaydet");
+        btnSave.setEnabled(false);
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 262, 139, -1));
 
         btnCancel.setBackground(new java.awt.Color(255, 255, 255));
         btnCancel.setForeground(new java.awt.Color(0, 0, 0));
         btnCancel.setIcon(new javax.swing.ImageIcon("C:\\Users\\xmeny\\Desktop\\Java-P\\NetBeans\\MusteriTakip\\src\\main\\java\\com\\yasinsolak\\utilty\\cancel_24px.png")); // NOI18N
         btnCancel.setText("İptal");
+        btnCancel.setEnabled(false);
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 262, 139, -1));
 
         btnNew.setBackground(new java.awt.Color(255, 255, 255));
         btnNew.setForeground(new java.awt.Color(0, 0, 0));
         btnNew.setIcon(new javax.swing.ImageIcon("C:\\Users\\xmeny\\Desktop\\Java-P\\NetBeans\\MusteriTakip\\src\\main\\java\\com\\yasinsolak\\utilty\\Plus_24px.png")); // NOI18N
         btnNew.setText("Yeni Kayıt");
+        btnNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnNew, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 262, 139, -1));
-
-        txtPhone.setBackground(new java.awt.Color(255, 255, 255));
-        txtPhone.setForeground(new java.awt.Color(0, 0, 0));
-        txtPhone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("0(   )-   -"))));
-        jPanel1.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 67, 174, -1));
 
         TxtSearchName.setBackground(new java.awt.Color(255, 255, 255));
         TxtSearchName.setForeground(new java.awt.Color(0, 0, 0));
+        TxtSearchName.setEnabled(false);
         jPanel1.add(TxtSearchName, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 376, 189, -1));
 
         txtSearchPhone.setBackground(new java.awt.Color(255, 255, 255));
         txtSearchPhone.setForeground(new java.awt.Color(0, 0, 0));
+        txtSearchPhone.setEnabled(false);
         jPanel1.add(txtSearchPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 376, 125, -1));
 
         txtSearchAdres.setBackground(new java.awt.Color(255, 255, 255));
         txtSearchAdres.setForeground(new java.awt.Color(0, 0, 0));
+        txtSearchAdres.setEnabled(false);
         jPanel1.add(txtSearchAdres, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 376, 270, -1));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        txtPhone.setBackground(new java.awt.Color(255, 255, 255));
+        txtPhone.setForeground(new java.awt.Color(0, 0, 0));
+        txtPhone.setEnabled(false);
+        jPanel1.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 136, -1));
+
+        tblMusteri.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -191,15 +221,15 @@ public class MainPage extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable2.setComponentPopupMenu(IslemlerPopup);
-        jScrollPane3.setViewportView(jTable2);
-        if (jTable2.getColumnModel().getColumnCount() > 0) {
-            jTable2.getColumnModel().getColumn(0).setResizable(false);
-            jTable2.getColumnModel().getColumn(0).setPreferredWidth(20);
-            jTable2.getColumnModel().getColumn(1).setPreferredWidth(120);
-            jTable2.getColumnModel().getColumn(2).setPreferredWidth(60);
-            jTable2.getColumnModel().getColumn(3).setPreferredWidth(40);
-            jTable2.getColumnModel().getColumn(4).setPreferredWidth(200);
+        tblMusteri.setComponentPopupMenu(IslemlerPopup);
+        jScrollPane3.setViewportView(tblMusteri);
+        if (tblMusteri.getColumnModel().getColumnCount() > 0) {
+            tblMusteri.getColumnModel().getColumn(0).setResizable(false);
+            tblMusteri.getColumnModel().getColumn(0).setPreferredWidth(20);
+            tblMusteri.getColumnModel().getColumn(1).setPreferredWidth(120);
+            tblMusteri.getColumnModel().getColumn(2).setPreferredWidth(60);
+            tblMusteri.getColumnModel().getColumn(3).setPreferredWidth(40);
+            tblMusteri.getColumnModel().getColumn(4).setPreferredWidth(200);
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -223,12 +253,77 @@ public class MainPage extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        String id = txtId.getText();
+        String ad = txtName.getText();
+        String adres = txtAdres.getText();
+        String cinsiyet = comboGender.getSelectedItem().toString();
+        String telefon = txtPhone.getText();
+        System.out.println("id..........: " + id);
+        System.out.println("ad..........: " + ad);
+        System.out.println("adres.......: " + adres);
+        System.out.println("cinsiyet....: " + cinsiyet);
+        System.out.println("tel.........: " + telefon);
+        if(ad.isEmpty() || adres.isEmpty() ){
+            JOptionPane.showMessageDialog(rootPane, "Gerekli Alanları Doldurun");
+            return;
+        }
+        Musteri musteri = new Musteri(ad, adres, telefon, "", 1, cinsiyet);
+        musteriService.save(musteri);
+        JOptionPane.showMessageDialog(rootPane, "Müşteri Kayıt İşlemi Tamamlandı");
+        listele();
+        acKapat(false);
+    }//GEN-LAST:event_btnSaveActionPerformed
+    public void acKapat(boolean  isTrue){
+        btnNew.setEnabled(!isTrue);
+        btnSave.setEnabled(isTrue);
+         btnCancel.setEnabled(isTrue);
+         txtName.setEnabled(isTrue);
+         txtPhone.setEnabled(isTrue);
+         comboGender.setEnabled(isTrue);
+          txtAdres.setEnabled(isTrue);
+    }
+    private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
+        txtName.setText("");
+         txtPhone.setText("");
+          txtAdres.setText("");
+        acKapat(true);
+    }//GEN-LAST:event_btnNewActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+      acKapat(false);
+    }//GEN-LAST:event_btnCancelActionPerformed
+
+    public void listele() {
+        List<Musteri> mList = musteriService.findAll();
+        for (int i = 0; i < mList.size(); i++) {
+            tblMusteri.setValueAt(mList.get(i).getId(), i, 0);
+            tblMusteri.setValueAt(mList.get(i).getAd(), i, 1);
+            tblMusteri.setValueAt(mList.get(i).getTelefon(), i, 2);
+            tblMusteri.setValueAt(mList.get(i).getCinsiyet(), i, 3);
+            tblMusteri.setValueAt(mList.get(i).getAdres(), i, 4);
+        }
+    }
+
+    private void atomikListele() {
+        List<Musteri> mList = musteriService.findAll();
+        AtomicInteger i = new AtomicInteger(0);
+        mList.forEach(mst -> {
+            tblMusteri.setValueAt(mst.getId(), i.get(), 0);
+            tblMusteri.setValueAt(mst.getAd(), i.get(), 1);
+            tblMusteri.setValueAt(mst.getTelefon(), i.get(), 2);
+            tblMusteri.setValueAt(mst.getCinsiyet(), i.get(), 3);
+            tblMusteri.setValueAt(mst.getAdres(), i.get(), 4);
+            i.incrementAndGet();
+        });
+    }
 
     /**
      * @param args the command line arguments
@@ -290,11 +385,11 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable tblMusteri;
     private javax.swing.JTextArea txtAdres;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtName;
-    private javax.swing.JFormattedTextField txtPhone;
+    private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtSearchAdres;
     private javax.swing.JTextField txtSearchPhone;
     // End of variables declaration//GEN-END:variables

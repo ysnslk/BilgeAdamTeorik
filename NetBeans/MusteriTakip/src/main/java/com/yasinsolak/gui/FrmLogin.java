@@ -5,6 +5,7 @@
 package com.yasinsolak.gui;
 
 import com.yasinsolak.repository.UserRepositoryImpl;
+import com.yasinsolak.service.UserService;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,11 +14,10 @@ import javax.swing.JOptionPane;
  */
 public class FrmLogin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainPage
-     */
+    private UserService userService;
     public FrmLogin() {
         initComponents();
+        userService = new  UserService();
     }
 
     /**
@@ -110,8 +110,7 @@ public class FrmLogin extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         String username = txtUsername1.getText();
         String password=String.valueOf(txtPassword1.getPassword());
-        UserRepositoryImpl userRepositoryImpl = new UserRepositoryImpl();
-        if (userRepositoryImpl.isUser(username, password)) {
+        if (userService.isUser(username, password)) {
             //Eğer kullanıcı var ise
             JOptionPane.showMessageDialog(null, "Giriş Başarılı...!", "Giriş", JOptionPane.INFORMATION_MESSAGE);
             new MainPage().setVisible(true);

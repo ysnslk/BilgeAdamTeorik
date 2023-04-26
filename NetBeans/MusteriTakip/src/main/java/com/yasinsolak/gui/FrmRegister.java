@@ -6,6 +6,7 @@ package com.yasinsolak.gui;
 
 import com.yasinsolak.entity.User;
 import com.yasinsolak.repository.UserRepositoryImpl;
+import com.yasinsolak.service.UserService;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,12 +15,11 @@ import javax.swing.JOptionPane;
  */
 public class FrmRegister extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmRegister
-     */
+    private UserService userService;
     public FrmRegister() {
         initComponents();
         lblError.setVisible(false);
+        userService = new  UserService();
     }
 
     /**
@@ -170,10 +170,10 @@ public class FrmRegister extends javax.swing.JFrame {
             String username = txtUsername.getText();
             String pwd = txtPass.getText();
             String email = txtEMail.getText();
-            UserRepositoryImpl userRepository = new UserRepositoryImpl();
+            
             User user = new User(null, username, pwd, email);
             JOptionPane.showMessageDialog(null, "Kayıt Başarılı", "Kayıt İşlemi", JOptionPane.INFORMATION_MESSAGE);
-            userRepository.save(user);
+            userService.save(user);
             txtUsername.setText("");
             txtPass.setText("");
             txtRepass.setText("");

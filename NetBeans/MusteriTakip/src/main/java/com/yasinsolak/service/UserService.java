@@ -1,45 +1,16 @@
 package com.yasinsolak.service;
 
 import com.yasinsolak.entity.User;
-import com.yasinsolak.repository.UserRepositoryImpl;
+import com.yasinsolak.repository.UserRepository;
+import com.yasinsolak.utilty.MyFactoryRepository;
+import com.yasinsolak.utilty.MyFactoryService;
 import java.util.List;
+import java.util.Optional;
 
-public class UserService implements IServiceManager<User> {
-
-    private UserRepositoryImpl repository;
+public class UserService extends MyFactoryService<User, UserRepository> {
 
     public UserService() {
-        repository = new UserRepositoryImpl();
-    }
-
-    @Override
-    public void save(User t) {
-        repository.save(t);
-    }
-
-    @Override
-    public void update(User t) {
-        repository.update();
-    }
-
-    @Override
-    public void delete(Long id) {
-        
-    }
-
-    @Override
-    public List<User> findAll() {
-        return null;
-    }
-
-    @Override
-    public List<User> findByAd(String ad) {
-        return null;
-    }
-
-    @Override
-    public User findById(Long id) {
-        return null;
+        super(new UserRepository());
     }
 
     public boolean isUser(String username, String password) {

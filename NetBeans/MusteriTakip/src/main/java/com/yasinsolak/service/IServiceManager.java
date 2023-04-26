@@ -2,6 +2,7 @@ package com.yasinsolak.service;
 
 import com.yasinsolak.entity.User;
 import java.util.List;
+import java.util.Optional;
 
 public interface IServiceManager<T> {
 
@@ -15,5 +16,5 @@ public interface IServiceManager<T> {
 
     List<T> findByAd(String ad);
 
-    T findById(Long id);
+    Optional<T> findById(Long id);
 }

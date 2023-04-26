@@ -1,45 +1,16 @@
 package com.yasinsolak.service;
 
 import com.yasinsolak.entity.Musteri;
-import com.yasinsolak.repository.MusteriRepositoryImpl;
+import com.yasinsolak.repository.MusteriRepository;
+import com.yasinsolak.utilty.MyFactoryRepository;
+import com.yasinsolak.utilty.MyFactoryService;
 import java.util.List;
+import java.util.Optional;
 
-public class MusteriService implements IServiceManager<Musteri> {
-
-    private MusteriRepositoryImpl repository;
+public class MusteriService extends MyFactoryService<Musteri, MyFactoryRepository> {
 
     public MusteriService() {
-        repository = new MusteriRepositoryImpl();
-    }
-
-    @Override
-    public void save(Musteri t) {
-        repository.save(t);
-    }
-
-    @Override
-    public void update(Musteri t) {
-        repository.update(t);
-    }
-
-    @Override
-    public void delete(Long id) {
-        repository.delete(id);
-    }
-
-    @Override
-    public List<Musteri> findAll() {
-        return repository.findAll();
-    }
-
-    @Override
-    public List<Musteri> findByAd(String ad) {
-        return repository.findByAd(ad);
-    }
-
-    @Override
-    public Musteri findById(Long id) {
-       return  repository.findById(id);
+        super(new MusteriRepository());
     }
 
 }
