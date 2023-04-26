@@ -41,6 +41,16 @@ public class Musteri {
         this.cinsiyet = cinsiyet;
     }
 
+    public Musteri(Long id, String ad, String adres, String telefon, String avatar, String cinsiyet, int state) {
+        this.id = id;
+        this.ad = ad;
+        this.adres = adres;
+        this.telefon = telefon;
+        this.avatar = avatar;
+        this.cinsiyet = cinsiyet;
+        this.state = state;
+    }
+
     public Long getId() {
         return id;
     }

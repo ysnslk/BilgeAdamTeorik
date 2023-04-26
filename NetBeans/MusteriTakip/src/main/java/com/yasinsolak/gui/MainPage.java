@@ -5,15 +5,8 @@ import com.yasinsolak.service.MusteriService;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-/**
- *
- * @author xmeny
- */
 public class MainPage extends javax.swing.JFrame {
 
     private MusteriService musteriService;
@@ -21,7 +14,7 @@ public class MainPage extends javax.swing.JFrame {
     public MainPage() {
         initComponents();
         musteriService = new MusteriService();
-        listele();
+        listele(null);
     }
 
     /**
@@ -76,9 +69,19 @@ public class MainPage extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
 
         btnDuzenle.setText("Düzenle");
+        btnDuzenle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDuzenleActionPerformed(evt);
+            }
+        });
         IslemlerPopup.add(btnDuzenle);
 
         btnSil.setText("Sil");
+        btnSil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSilActionPerformed(evt);
+            }
+        });
         IslemlerPopup.add(btnSil);
         IslemlerPopup.add(jSeparator1);
 
@@ -177,17 +180,32 @@ public class MainPage extends javax.swing.JFrame {
 
         TxtSearchName.setBackground(new java.awt.Color(255, 255, 255));
         TxtSearchName.setForeground(new java.awt.Color(0, 0, 0));
-        TxtSearchName.setEnabled(false);
+        TxtSearchName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TxtSearchNameKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TxtSearchNameKeyReleased(evt);
+            }
+        });
         jPanel1.add(TxtSearchName, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 376, 189, -1));
 
         txtSearchPhone.setBackground(new java.awt.Color(255, 255, 255));
         txtSearchPhone.setForeground(new java.awt.Color(0, 0, 0));
-        txtSearchPhone.setEnabled(false);
+        txtSearchPhone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSearchPhoneKeyReleased(evt);
+            }
+        });
         jPanel1.add(txtSearchPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 376, 125, -1));
 
         txtSearchAdres.setBackground(new java.awt.Color(255, 255, 255));
         txtSearchAdres.setForeground(new java.awt.Color(0, 0, 0));
-        txtSearchAdres.setEnabled(false);
+        txtSearchAdres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSearchAdresKeyReleased(evt);
+            }
+        });
         jPanel1.add(txtSearchAdres, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 376, 270, -1));
 
         txtPhone.setBackground(new java.awt.Color(255, 255, 255));
@@ -271,45 +289,135 @@ public class MainPage extends javax.swing.JFrame {
         System.out.println("adres.......: " + adres);
         System.out.println("cinsiyet....: " + cinsiyet);
         System.out.println("tel.........: " + telefon);
-        if(ad.isEmpty() || adres.isEmpty() ){
+        if (ad.isEmpty() || adres.isEmpty()) {
             JOptionPane.showMessageDialog(rootPane, "Gerekli Alanları Doldurun");
             return;
         }
-        Musteri musteri = new Musteri(ad, adres, telefon, "", 1, cinsiyet);
-        musteriService.save(musteri);
-        JOptionPane.showMessageDialog(rootPane, "Müşteri Kayıt İşlemi Tamamlandı");
-        listele();
+        if (txtId.getText().isEmpty()) {
+            Musteri musteri = new Musteri(ad, adres, telefon, "", 1, cinsiyet);
+            musteriService.save(musteri);
+            JOptionPane.showMessageDialog(rootPane, "Müşteri Kayıt İşlemi Tamamlandı");
+
+        } else {
+            Musteri musteri = new Musteri(Long.valueOf(id), ad, adres, telefon, "", cinsiyet, 1);
+            musteriService.update(musteri);
+            JOptionPane.showMessageDialog(rootPane, "Müşteri Güncelleme İşlemi Tamamlandı");
+        }
+
+        listele(null);
         acKapat(false);
     }//GEN-LAST:event_btnSaveActionPerformed
-    public void acKapat(boolean  isTrue){
+    public void acKapat(boolean isTrue) {
         btnNew.setEnabled(!isTrue);
         btnSave.setEnabled(isTrue);
-         btnCancel.setEnabled(isTrue);
-         txtName.setEnabled(isTrue);
-         txtPhone.setEnabled(isTrue);
-         comboGender.setEnabled(isTrue);
-          txtAdres.setEnabled(isTrue);
+        btnCancel.setEnabled(isTrue);
+        txtName.setEnabled(isTrue);
+        txtPhone.setEnabled(isTrue);
+        comboGender.setEnabled(isTrue);
+        txtAdres.setEnabled(isTrue);
     }
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
         txtName.setText("");
-         txtPhone.setText("");
-          txtAdres.setText("");
+        txtPhone.setText("");
+        txtAdres.setText("");
+        txtId.setText("");
         acKapat(true);
     }//GEN-LAST:event_btnNewActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
-      acKapat(false);
+        acKapat(false);
     }//GEN-LAST:event_btnCancelActionPerformed
 
-    public void listele() {
-        List<Musteri> mList = musteriService.findAll();
+    private void TxtSearchNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtSearchNameKeyPressed
+
+    }//GEN-LAST:event_TxtSearchNameKeyPressed
+
+    private void TxtSearchNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtSearchNameKeyReleased
+        String arananDeger = TxtSearchName.getText();
+        Musteri mst = new Musteri();
+        mst.setAd(arananDeger);
+        mst.setState(1);
+        List<Musteri> mlist = musteriService.findByEntity(mst);
+        listele(mlist);
+    }//GEN-LAST:event_TxtSearchNameKeyReleased
+
+    private void txtSearchPhoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchPhoneKeyReleased
+        String arananDeger = txtSearchPhone.getText();
+        Musteri mst = new Musteri();
+        mst.setTelefon(arananDeger);
+        mst.setState(1);
+        List<Musteri> mlist = musteriService.findByEntity(mst);
+        listele(mlist);
+    }//GEN-LAST:event_txtSearchPhoneKeyReleased
+
+    private void txtSearchAdresKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchAdresKeyReleased
+        String arananDeger = txtSearchAdres.getText();
+        Musteri mst = new Musteri();
+        mst.setAdres(arananDeger);
+        mst.setState(1);
+        List<Musteri> mlist = musteriService.findByEntity(mst);
+        listele(mlist);
+    }//GEN-LAST:event_txtSearchAdresKeyReleased
+
+    private void btnSilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSilActionPerformed
+        int selectRow = tblMusteri.getSelectedRow();
+        if (selectRow == -1) {
+            JOptionPane.showMessageDialog(rootPane, "Lütfen önce bir satır seçiniz");
+        } else {
+            int secim = JOptionPane.showConfirmDialog(rootPane, "Seçilen kaydı silmek istediğinize emin misiniz ?", "Uyarı", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            if (secim == JOptionPane.YES_OPTION) {
+                Long id = (Long) tblMusteri.getValueAt(selectRow, 0);
+                musteriService.delete(id);
+                listele(null);
+                JOptionPane.showMessageDialog(rootPane, id + " başarı ile silindi....!");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Kayıt silme işlemi iptal edildi...!", "Uyarı", JOptionPane.OK_OPTION);
+            }
+
+        }
+    }//GEN-LAST:event_btnSilActionPerformed
+
+    private void btnDuzenleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDuzenleActionPerformed
+        int selectRow = tblMusteri.getSelectedRow();
+        if (selectRow == -1) {
+            JOptionPane.showMessageDialog(rootPane, "Lütfen önce bir satır seçiniz");
+        } else {
+            txtId.setText(tblMusteri.getValueAt(selectRow, 0).toString());
+            txtName.setText(tblMusteri.getValueAt(selectRow, 1).toString());
+            txtAdres.setText(tblMusteri.getValueAt(selectRow, 4).toString());
+            txtPhone.setText(tblMusteri.getValueAt(selectRow, 2).toString());
+            comboGender.setSelectedItem(tblMusteri.getValueAt(selectRow, 3) == null ? "Belirtiniz" : tblMusteri.getValueAt(selectRow, 3).toString());
+            acKapat(true);
+        }
+    }//GEN-LAST:event_btnDuzenleActionPerformed
+
+    private void tabloTemizle() {
+        DefaultTableModel dtm = (DefaultTableModel) tblMusteri.getModel();
+        dtm.getDataVector().removeAllElements();
+        tblMusteri.repaint();
+    }
+
+    private void tabloSatirEkle() {
+        DefaultTableModel dtm = (DefaultTableModel) tblMusteri.getModel();
+        dtm.setRowCount(dtm.getRowCount() + 1);
+        tblMusteri.repaint();
+    }
+
+    public void listele(List<Musteri> mList) {
+         musteriService = new MusteriService();
+        tabloTemizle();
+        if (mList == null) {
+            mList = musteriService.findAll();
+        }
         for (int i = 0; i < mList.size(); i++) {
+            tabloSatirEkle();
             tblMusteri.setValueAt(mList.get(i).getId(), i, 0);
             tblMusteri.setValueAt(mList.get(i).getAd(), i, 1);
             tblMusteri.setValueAt(mList.get(i).getTelefon(), i, 2);
             tblMusteri.setValueAt(mList.get(i).getCinsiyet(), i, 3);
             tblMusteri.setValueAt(mList.get(i).getAdres(), i, 4);
         }
+
     }
 
     private void atomikListele() {
@@ -325,37 +433,8 @@ public class MainPage extends javax.swing.JFrame {
         });
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainPage().setVisible(true);

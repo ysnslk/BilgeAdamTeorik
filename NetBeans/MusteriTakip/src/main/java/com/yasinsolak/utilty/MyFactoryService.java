@@ -42,4 +42,9 @@ public class MyFactoryService<T, R extends MyFactoryRepository> implements IServ
         return repository.findById(id);
     }
 
+    @Override
+    public List<T> findByEntity(T entity) {
+        return repository.findByEntity(entity);
+        }
+
 }

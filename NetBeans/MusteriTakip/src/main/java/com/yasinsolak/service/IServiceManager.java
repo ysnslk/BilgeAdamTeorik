@@ -17,4 +17,6 @@ public interface IServiceManager<T> {
     List<T> findByAd(String ad);
 
     Optional<T> findById(Long id);
+    
+       List<T> findByEntity(T entity);
 }
