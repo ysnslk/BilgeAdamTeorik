@@ -17,7 +17,7 @@ public class Musteri {
     private String adres;
     private String telefon;
     private String avatar;
-     private String cinsiyet;
+    private String cinsiyet;
     private int state;
 
     public Musteri() {
