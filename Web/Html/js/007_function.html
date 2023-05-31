@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonksiyonları Tanımlamak</title>
+</head>
+<body>
+    <button onclick="topla(43,22)">Topla</button>
+    <script>
+
+        function topla(s1,s2) {
+            let toplam = s1+s2;
+            console.log('İki sayının toplamı...: ',toplam);
+        }
+
+        topla(11,56);
+
+        const karesi = function(sayi) {
+            return sayi*sayi;
+        }
+        console.log('32 karesi....: ', karesi(32));
+    </script>
+    
+</body>
+</html>

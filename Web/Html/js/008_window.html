@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Penceresinin Özellikleri ile çalışmak</title>
+</head>
+<body>
+
+    <script>
+        val = window;
+
+        console.log(val);
+        let secim = confirm('İşleme devam etmek istediğinizden emin misiniz?');
+        console.log('seçim...: ', secim);
+        console.log(val.location);
+        window.location = 'http://www.google.com'
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yükleniyor mu?</title>
+    <style>
+        .container{
+          height: 200px;
+          display: flex;
+          justify-content: center;  
+        }
+        .circle{
+            height: 50px;
+            width: 50px;
+            border-radius: 50px;
+            background-color: #d82424;
+        }
+        .animate{
+            animation-name: ziplama;
+            animation-iteration-count: infinite;
+            animation-duration: 1s;
+            animation-direction: alternate;
+            animation-timing-function: cubic-bezier(0.5,0.05,1,0.5);
+        }
+        @keyframes ziplama{
+            from {transform: translate(0,0);}
+            to   {transform: translate(0,200px) ;}
+        }
+        .bekleme1{
+            animation-delay: 200ms;
+        }
+        .bekleme2{
+            animation-delay: 400ms;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle animate"></div>
+        <div class="circle animate bekleme1"></div>
+        <div class="circle animate bekleme2"></div>
+    </div>
+    
+</body>
+</html>

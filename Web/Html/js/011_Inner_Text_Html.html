@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Belirli yazıların bulunması gayet normal ancak;
+        <strong>Belli kısımlarda HTML tag leri kullanılabilir</strong>
+        diğer kısımlarda normal text içeriği olabilir.
+    </p>
+    <br><br>
+    <div>
+
+    </div>
+    <script>
+        var p = document.querySelector('p');
+        console.log(p.innerText);
+        console.log(p.innerHTML);
+        let div = document.querySelector('div');
+        div.innerHTML += '<p>burası 1. paragraf</p><p>burası 2. paragraf</p>';
+        div.innerText += '<ul><li>1. sıra</li><li>2. sıra</li><li>3. sıra</li></ul>';
+        
+    </script>
+</body>
+</html>

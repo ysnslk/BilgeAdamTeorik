@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * Storage Kısımlarına bilgi yazmak
+         */
+        console.log(localStorage);
+        localStorage.setItem('token','şifresli giriş bilgisi');
+        localStorage.setItem('username','muhammedali');
+        console.log(localStorage);
+        sessionStorage.setItem('lkl','session bilgisi');
+        console.log(sessionStorage);
+        /**
+         * 
+         * Storage Bilgi okumak, silmek
+        */
+       console.log(localStorage.getItem('token'));
+       localStorage.removeItem('username');
+       
+    </script>
+</body>
+</html>

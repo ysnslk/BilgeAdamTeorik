@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dizilerin Kullanımı</title>
+</head>
+<body>
+    
+    <script>
+        var marka = ['BMW','AUDI','MERCEDES','TOYOTA','VOLVO','OPEL'];
+        var model = new Array('320','A8','E200','Ra4','XC90','Mokka');
+        console.log(marka);
+        console.log(model);
+        model.push('A3'); //Dizinin sonuna ekleme yapar.
+        console.log(model);
+        model.unshift('CX40'); //Dizinin başına ekleme yapar.
+        console.log(model);
+        model.pop(); //Son elemanı siler.
+        console.log(model);
+        model.shift(); //İlk elemanı siler.
+        console.log(model);
+        console.log('320 nin index nosu...:',model.indexOf('320'));
+        model.sort(); //Sıralama yapar ve nesneye uygular.
+        console.log(model);
+        model.reverse(); //diziyi ters çevirme işlemi yapar.
+        console.log(model);
+        var kesilendata = model.splice(1,4); // [1,4] 1 ve 4 
+        console.log('kesilenler',kesilendata);
+        console.log(model);
+   </script>
+</body>
+</html>

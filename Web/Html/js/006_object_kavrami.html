@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objelerle Çalışma</title>
+    <style>
+      
+        th , td{
+            border: 1px solid black;
+            padding: 8px;
+        }
+        table{
+            border-collapse: separate;
+            width: 100%;
+        }
+        th{
+            background-color: cornflowerblue;
+            color: white;
+        }
+        tr:nth-child(even){
+            background-color: #dedddd;
+        }
+        tr:hover{
+            background-color: #13edb3;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>ad</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    
+    <script>
+        /**
+         * JSON Object
+         */
+         var musteri = {
+            id: 1,
+            ad: 'Yasin',
+            adres: 'Eskişehir',
+            telefon: '0 555 555 55 55',
+            isactive:true,
+            ailebireyleri: [
+                'Anne','Baba','Kız','Çocuk','Dede','Babanne'
+            ]
+         };
+         console.log(musteri);
+         console.log('Müşteri ad....:',musteri.ad);
+         console.log('Aile 2. Bireyi..: ',musteri.ailebireyleri[2]);
+         /**
+         * JSON Array
+         */
+         var mlist = [{
+            id: 1,
+            ad: 'Ayse'
+         },{
+            id: 34,
+            ad: 'Tekin'
+         },
+         {
+            id: 45,
+            ad: 'Bahar'
+         }];
+         console.log(mlist);
+         console.log('2. müşterinin adı....: ',mlist[1].ad);
+         var tbody = document.getElementById('today');
+         tbody.innerHTML = '';
+         mlist.map((data)=>{
+            tbody.innerHTML+=
+
+             <tr>
+                <td>${data.id}</td>
+            </tr>  
+            
+         });
+   
+   </script>
+</body>
+</html>
