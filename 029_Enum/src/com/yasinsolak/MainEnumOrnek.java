@@ -9,6 +9,10 @@ public class MainEnumOrnek {
 	enum Mevsimler {
 		ILKBAHAR, YAZ, SONBAHAR, KIS
 	}
+	
+	enum Ortalama{
+		KUCUK, BUYUK
+	}
 
 	/*
 	 * Enumlar bizleri aşağıdaki şekilde tek tek static değişken tanımlamak
@@ -18,6 +22,9 @@ public class MainEnumOrnek {
 	public static final int LOW = 1;
 	public static final int MEDIUM = 2;
 	public static final int HIGH = 3;
+	
+	public static final String KUCUK = "Ortalma 50den küçük";
+	public static final String BUYUK = "Ortalma 50den büyük";
 
 	public static void ekranaYaz(Mevsimler m) {
 		System.out.println(m);

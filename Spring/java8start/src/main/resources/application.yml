@@ -16,7 +16,12 @@ server:
 
 spring:
   datasource:
-    url: ""
-    username: ""
-    password: ""
-    driver-class-name: ""
+    url: "jdbc:postgresql://localhost:5432/Java8PersonelYonetim"
+    username: "postgres"
+    password: "123456789"
+    driver-class-name: "org.postgresql.Driver"
+
+  jpa:
+    hibernate:
+      ddl-auto: update # create-> her seferinde yeniden oluştur. create-drop-> uygulama kapatıldığında siler yeniden oluşturur.  #update-> tablodaki verileri korur.
+    show-sql: true
