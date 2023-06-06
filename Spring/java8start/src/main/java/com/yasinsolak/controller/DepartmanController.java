@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import static com.yasinsolak.constants.RestApiList.*;
+
 /**
  * Controller katmanında 2 kullanım şeklimiz var we için
  * 1- @Controller annatation i ile MVC odaklı programlama
@@ -17,7 +19,7 @@ import java.util.List;
 /**
  * http://localhost:9090/departman
  */
-@RequestMapping("/departman")
+@RequestMapping(DEPARTMAN)
 public class DepartmanController {
 
     private final DepartmanService departmanService;
@@ -40,12 +42,12 @@ public class DepartmanController {
      * @param konum
      */
 
-    @GetMapping("/save")
+    @GetMapping(SAVE)
     public void save(String ad, String konum){
         Departman departman = Departman.builder().ad(ad).konum(konum).build();
         departmanService.save(departman);
     }
-    @GetMapping("/delete")
+    @GetMapping(DELETE)
     public void delete(Long id){
         departmanService.delete(id);
     }

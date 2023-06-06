@@ -19,4 +19,11 @@ public class Departman {
     String ad;
     Long yoneticiid;
     String konum;
+    Long createat;
+    Long updateat;
+    /**
+     * Kaydın aktif olup olmadığını belirtir.
+     * DİKKAT!!! veritabanından kayıt silinmez. Sadece bu alan true yada false olur.
+     */
+    Boolean isactive;
 }
