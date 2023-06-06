@@ -1,16 +1,16 @@
 package com.yasinsolak.controller;
 
 import com.yasinsolak.constants.RestApiList;
+import com.yasinsolak.dto.request.SavePersonelRequestDto;
+import com.yasinsolak.dto.response.FindAllVwUserResponseDto;
 import com.yasinsolak.repository.entity.Personel;
 import com.yasinsolak.services.PersonelService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.yasinsolak.constants.RestApiList.*;
@@ -83,7 +83,6 @@ public class PersonelController {
                 .type(type)
                 .build();
         personelService.save(personel);
-
     }
     @GetMapping(FINDALL)
     public ResponseEntity<List<Personel>> findAll(){
@@ -91,6 +90,60 @@ public class PersonelController {
     }
 
     /**
-     * GET VE POST DIŞINDA BAŞKA HTTP KOMUTLARI VAR MIDIR ? VARSA NELERDİR?
+     * Client ve Server arasındaki iletişimde performansı öncelemek istiyorsanız ve atrıca sunucu
+     * maliyetlerinin artmamasını istiyorsanız iki bileşen arasındaki veri transferini minimum indirmek
+     * için DTO(Data Transfer Object) kullanmalısınız.
+     *
+     * @return
      */
+    @GetMapping(FINDALLVWUSER)
+    public ResponseEntity<List<FindAllVwUserResponseDto>> getAllVwPersonel(){
+        List<Personel> plist = personelService.findAll();
+        List<FindAllVwUserResponseDto> result = new ArrayList<>();
+        plist.forEach(p-> {
+           FindAllVwUserResponseDto dto =  FindAllVwUserResponseDto.builder()
+                    .id(p.getId())
+                    .ad(p.getAd())
+                    .photo(p.getPhoto())
+                    .build();
+            result.add(dto);
+        });
+        return ResponseEntity.ok(result);
+    }
+    @PostMapping(SAVEDTO)
+    public ResponseEntity<Boolean> savePersonelDto(@RequestBody SavePersonelRequestDto dto){
+        Personel personel = Personel.builder()
+                .ad(dto.getAd())
+                .adres(dto.getAdres())
+                .telefon(dto.getTelefon())
+                .build();
+        personelService.save(personel);
+        return ResponseEntity.ok(true);
+    }
+    @GetMapping("/getUpperCaseName")
+    public ResponseEntity<String> getUpperCaseName(String ad){
+        String upperCaseName = ad.toUpperCase();
+        return ResponseEntity.ok(upperCaseName);
+    }
+    @PostMapping("/postUpperCaseName")
+    public ResponseEntity<String> postUpperCaseName(String ad){
+        String upperCaseName = ad.toUpperCase();
+        return ResponseEntity.ok(upperCaseName);
+    }
+    @PutMapping("/putUpperCaseName")
+    public ResponseEntity<String> putUpperCaseName(String ad){
+        String upperCaseName = ad.toUpperCase();
+        return ResponseEntity.ok(upperCaseName);
+    }
+    @DeleteMapping("/deleteUpperCaseName")
+    public ResponseEntity<String> deleteUpperCaseName(String ad){
+        String upperCaseName = ad.toUpperCase();
+        return ResponseEntity.ok(upperCaseName);
+    }
+    @PatchMapping("/patchUpperCaseName")
+    public ResponseEntity<String> patchUpperCaseName(String ad){
+        String upperCaseName = ad.toUpperCase();
+        return ResponseEntity.ok(upperCaseName);
+    }
+
 }
