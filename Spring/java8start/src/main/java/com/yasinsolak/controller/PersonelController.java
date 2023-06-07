@@ -3,8 +3,10 @@ package com.yasinsolak.controller;
 import com.yasinsolak.constants.RestApiList;
 import com.yasinsolak.dto.request.SavePersonelRequestDto;
 import com.yasinsolak.dto.response.FindAllVwUserResponseDto;
+import com.yasinsolak.mapper.IPersonelMapper;
 import com.yasinsolak.repository.entity.Personel;
 import com.yasinsolak.services.PersonelService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
@@ -72,7 +74,6 @@ public class PersonelController {
      * GET ile bilgiler header(başlıkta) tutar.
      * POST ile bilgiler body(gövde) taşınır.
      */
-
     @PostMapping(SAVE)
     public void savePersonel(String ad,String adres,int yas,String telefon,int type){
         Personel personel = Personel.builder()
@@ -84,6 +85,50 @@ public class PersonelController {
                 .build();
         personelService.save(personel);
     }
+
+    /**
+     * DİKKAT!!!!!!!!!!!!!!!
+     * Eğer DTO içinde validasyon yapıyor iseniz, mutlaka @Valid anatasyonu kullanın.
+     * bu anatasyon olmaz ise validasyon kontrolü sağlanmaz. DTO için önüne @Valid anatasyonu eklenmelidir.
+     *
+     */
+    @PostMapping(SAVEDTO)
+    public ResponseEntity<Boolean> savePersonelDto(@RequestBody @Valid SavePersonelRequestDto dto){
+        Personel personel = Personel.builder()
+                .ad(dto.getAd())
+                .adres(dto.getAdres())
+                .telefon(dto.getTelefon())
+                .acildurumtelefonu(dto.getAcildurumtelefonu())
+                .acildurumkisisi(dto.getAcildurumkisisi())
+                .build();
+        personelService.save(personel);
+        return ResponseEntity.ok(true);
+    }
+
+    @PostMapping(SAVEDTOMAPPER)
+    public ResponseEntity<Boolean> savePersonelMapperDto(@RequestBody @Valid SavePersonelRequestDto dto){
+        Personel personel = IPersonelMapper.INSTANCE.personelFromDto(dto);
+        personelService.save(personel);
+        return ResponseEntity.ok(true);
+    }
+
+    /**
+     * DİKKAT!!!!!!
+     * Controller Katmanı -> kullanıcı ile iletişime geçerek gerekli bilgilerin doğru bir şekilde service katmanına
+     * iletilmesinden mesuldur.
+     * Bu nedenle ,bu katmanda dönüşüm, Nesne yaratma, farklı servisler ile birleştirilerekişlem yapma gibi işlemlerden
+     * olabildiğince kaçınmak gereklidir.
+     *
+     */
+    @PostMapping(SAVEDTOMAPPER2)
+    public ResponseEntity<Boolean> savePersonelMapperDto2(@RequestBody @Valid SavePersonelRequestDto dto){
+        /**
+         * Kullanıcının yetkinliği kontrol edilebilir. Sisteme giriş yapıp yapmayacağı kontrol edilebilir. Geçerli bir
+         * oturum olup olmadığı kontrol edilebilir.
+         */
+        return ResponseEntity.ok(personelService.saveFromDto(dto));
+    }
+
     @GetMapping(FINDALL)
     public ResponseEntity<List<Personel>> findAll(){
         return ResponseEntity.ok(personelService.findAll());
@@ -110,15 +155,16 @@ public class PersonelController {
         });
         return ResponseEntity.ok(result);
     }
-    @PostMapping(SAVEDTO)
-    public ResponseEntity<Boolean> savePersonelDto(@RequestBody SavePersonelRequestDto dto){
-        Personel personel = Personel.builder()
-                .ad(dto.getAd())
-                .adres(dto.getAdres())
-                .telefon(dto.getTelefon())
-                .build();
-        personelService.save(personel);
-        return ResponseEntity.ok(true);
+    @GetMapping(FINDALLVWUSERMAPPAR)
+    public ResponseEntity<List<FindAllVwUserResponseDto>> getAllVwPersonelDto(){
+        List<Personel> plist = personelService.findAll();
+        List<FindAllVwUserResponseDto> result = new ArrayList<>();
+        plist.forEach(p-> {
+            //FindAllVwUserResponseDto dto =  IPersonelMapper.INSTANCE.personelToDto(p);
+            //result.add(dto);
+            result.add(IPersonelMapper.INSTANCE.personelToDto(p));
+        });
+        return ResponseEntity.ok(result);
     }
     @GetMapping("/getUpperCaseName")
     public ResponseEntity<String> getUpperCaseName(String ad){
