@@ -9,14 +9,14 @@ import lombok.Getter;
  * olarak dönmek doğru olacaktır. Bu nedenle bir ReturnType Response Entity oluşturmak için doğru yaklaşımdır.
  */
 @Getter
-public class Java8StartException extends RuntimeException{
+public class HastaneRandevuException extends RuntimeException{
 
     private final ErrorType errorType;
-    public Java8StartException(ErrorType errorType){
+    public HastaneRandevuException(ErrorType errorType){
         super(errorType.getMessage());
         this.errorType = errorType;
     }
-    public Java8StartException(ErrorType errorType,String message){
+    public HastaneRandevuException(ErrorType errorType, String message){
         super(message);
         this.errorType = errorType;
     }
