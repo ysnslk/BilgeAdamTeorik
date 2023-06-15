@@ -27,9 +27,9 @@ spring:
     show-sql: true
 
 myapplication:
-   name: "Hastane Randevu Sistemi"
-   version: "1.0.0"
-   description: "Hastane Randevu Sistemi"
+  name: "Hastane Randevu Sistemi"
+  version: "1.0.0"
+  description: "Hastane Randevu Sistemi"
 
 burayaistediginiyazabilirsin:
   bunun-bir-kriteri-yok: "Dene istersen"

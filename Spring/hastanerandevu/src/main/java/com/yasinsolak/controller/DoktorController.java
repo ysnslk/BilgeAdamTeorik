@@ -9,6 +9,7 @@ import com.yasinsolak.repository.view.VwDoktor;
 import com.yasinsolak.service.DoktorService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,6 +20,13 @@ import java.util.List;
 public class DoktorController {
     private final DoktorService doktorService;
 
+    @Value("${myapplication.name}")
+    private String uygulamaAdi;
+
+    @GetMapping("/uygulamaadi")
+    public String getActiveApplicationFile(){
+        return uygulamaAdi;
+    }
     @PostMapping(SAVE)
     public Doktor save(@RequestBody @Valid DoktorSaveRequestDto dto){
         return doktorService.save(dto);
