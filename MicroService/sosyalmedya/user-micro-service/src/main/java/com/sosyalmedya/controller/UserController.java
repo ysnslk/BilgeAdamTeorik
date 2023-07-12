@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import static com.sosyalmedya.constants.RestApiList.*;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(USER)
@@ -21,15 +22,16 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping(SAVE)
-    public ResponseEntity<UserSaveResponseDto> save(@RequestBody UserSaveRequestDto dto){
-       userService.save(dto);
+    public ResponseEntity<UserSaveResponseDto> save(@RequestBody UserSaveRequestDto dto) {
+        userService.save(dto);
         return ResponseEntity.ok(UserSaveResponseDto.builder()
-                        .status(200)
-                        .result("Başarılı bir şekilde kaydedildi")
+                .status(200)
+                .result("Başarılı bir şekilde kaydedildi")
                 .build());
     }
+
     @PostMapping(FINDALL)
-    public ResponseEntity<List<User>> findAll(){
+    public ResponseEntity<List<User>> findAll() {
         return ResponseEntity.ok(userService.findAll());
     }
 

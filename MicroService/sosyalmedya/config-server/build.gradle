@@ -3,9 +3,6 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${versions.springBoot}")
     }
 }
-
 dependencies {
-    implementation libs.springDataMongodb
-    implementation libs.springCloudConfigClient
-    implementation libs.springCloudConfig
+    implementation libs.springCloudConfigServer
 }

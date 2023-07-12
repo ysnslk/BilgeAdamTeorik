@@ -16,5 +16,6 @@ public class RestApiList {
 
     public static final String LOGIN ="/login";
     public static final String REGISTER = "/regiter";
+    public static final String SAVE = "/save";
 
 }

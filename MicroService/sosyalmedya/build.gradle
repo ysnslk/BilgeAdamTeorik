@@ -37,9 +37,10 @@ allprojects {
         implementation libs.springBootWeb
         implementation libs.lombok
         annotationProcessor libs.lombok
-        implementation libs.swaggerui
         implementation libs.mapstruct
-        implementation libs.mapstructProcessor
+        annotationProcessor libs.mapstructProcessor
+        implementation libs.swaggerui
+        implementation libs.springOpenFeign
         testImplementation(platform("org.junit:junit-bom:5.9.1"))
         testImplementation("org.junit.jupiter:junit-jupiter")
     }
