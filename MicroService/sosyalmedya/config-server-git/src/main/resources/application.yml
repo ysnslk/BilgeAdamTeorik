@@ -1,0 +1,16 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server-git
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/ysnslk/java8configrepo.git"
+          default-label: main
+          skip-ssl-validation: true
+          username: ysnslk
+          password: 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
+

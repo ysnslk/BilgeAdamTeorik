@@ -2,6 +2,19 @@ server:
   port: 9090
 
 spring:
+  rabbitmq:
+    host:
+    port: 5672
+    username: admin
+    password: root
+  cloud:
+    compatibility-verifier:
+      enabled: false
+  zipkin:
+    enabled: false
+    base-url: http://localhost:9411
+    service:
+      name: auth-server
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/AuthDB
@@ -16,4 +29,5 @@ my-project:
   user-service:
     ip: localhost
     port: 9092
-    ur: "http://localhosty:9092/api/v1/user"
+    url: "http://localhost:9092/api/v1/user"
+

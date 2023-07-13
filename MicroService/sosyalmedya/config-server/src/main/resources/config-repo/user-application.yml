@@ -2,6 +2,19 @@ server:
   port: 9092
 
 spring:
+  rabbitmq:
+    host:
+    port: 5672
+    username: admin
+    password: root
+  cloud:
+    compatibility-verifier:
+      enabled: false
+  zipkin:
+    enabled: false
+    base-url: http://localhost:9411
+    service:
+      name: user-server
   data:
     mongodb:
       host: localhost
