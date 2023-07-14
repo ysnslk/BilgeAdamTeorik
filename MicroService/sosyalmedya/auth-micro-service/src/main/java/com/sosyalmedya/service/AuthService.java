@@ -7,10 +7,11 @@ import com.sosyalmedya.exceptions.AuthException;
 import com.sosyalmedya.exceptions.ErrorType;
 import com.sosyalmedya.manager.IUserManager;
 import com.sosyalmedya.mapper.IAuthMapper;
+import com.sosyalmedya.rabbitmq.model.CreateProfile;
+import com.sosyalmedya.rabbitmq.producer.CreateProfileProducer;
 import com.sosyalmedya.repository.IAuthRepository;
 import com.sosyalmedya.repository.entity.Auth;
 import com.sosyalmedya.utility.ServiceManager;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -19,12 +20,14 @@ import java.util.Optional;
 public class AuthService extends ServiceManager<Auth,Long> {
     private final IAuthRepository repository;
     private final IUserManager userManager;
+    private final CreateProfileProducer createProfileProducer;
 
 
-    public AuthService(IAuthRepository repository, IUserManager userManager) {
+    public AuthService(IAuthRepository repository, IUserManager userManager, CreateProfileProducer createProfileProducer) {
         super(repository);
         this.repository = repository;
         this.userManager = userManager;
+        this.createProfileProducer = createProfileProducer;
     }
     /**
      * Register a new user
@@ -57,6 +60,20 @@ public class AuthService extends ServiceManager<Auth,Long> {
                 .email(dto.getEmail())
                 .username(dto.getUsername())
                 .build());
+
+        /**
+         * Auth servis kullanıcıyı kayıt ettikten sonra user microservisine kullanıcı profili oluşturmak üzere bilgi gönderir
+         * Dikkat!!!!!
+         * auth servis ile user servis arasında tutarlılık gerektiren bir bağlantı vardır. Bu neden
+         * auth bir veriyi kayıt ettiğinde mutlaka userserviste oluşmalıdır.
+         */
+        createProfileProducer.sendCreateProfileMessage(
+                CreateProfile.builder()
+                        .authId(auth.getId())
+                        .username(dto.getUsername())
+                        .email(dto.getEmail())
+                        .build()
+        );
         return true;
     }
     public Boolean login(DoLoginRequestDto dto){
