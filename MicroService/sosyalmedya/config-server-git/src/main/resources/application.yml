@@ -12,5 +12,5 @@ spring:
           default-label: main
           skip-ssl-validation: true
           username: ysnslk
-          password: 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
+          password: ${GIT_PASSWORD}
 

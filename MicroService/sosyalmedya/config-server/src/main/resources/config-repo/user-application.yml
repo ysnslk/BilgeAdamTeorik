@@ -20,5 +20,5 @@ spring:
       host: localhost
       port: 27017
       database: sosyalmedyadb
-      username: admin
-      password: root
+      username: bilgeadmin
+      password: bilge33**
