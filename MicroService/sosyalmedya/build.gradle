@@ -41,8 +41,9 @@ allprojects {
         annotationProcessor libs.mapstructProcessor
         implementation libs.swaggerui
         implementation libs.springOpenFeign
-        implementation libs.springCloudStarterSleuth
-        implementation libs.springCloudSleuthZipkin
+        implementation libs.auth0
+       // implementation libs.springCloudStarterSleuth
+      //  implementation libs.springCloudSleuthZipkin
         testImplementation(platform("org.junit:junit-bom:5.9.1"))
         testImplementation("org.junit.jupiter:junit-jupiter")
     }

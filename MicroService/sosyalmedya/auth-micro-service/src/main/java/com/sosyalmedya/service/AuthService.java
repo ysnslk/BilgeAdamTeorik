@@ -11,6 +11,7 @@ import com.sosyalmedya.rabbitmq.model.CreateProfile;
 import com.sosyalmedya.rabbitmq.producer.CreateProfileProducer;
 import com.sosyalmedya.repository.IAuthRepository;
 import com.sosyalmedya.repository.entity.Auth;
+import com.sosyalmedya.utility.JwtTokenManager;
 import com.sosyalmedya.utility.ServiceManager;
 import org.springframework.stereotype.Service;
 
@@ -21,13 +22,15 @@ public class AuthService extends ServiceManager<Auth,Long> {
     private final IAuthRepository repository;
     private final IUserManager userManager;
     private final CreateProfileProducer createProfileProducer;
+    private final JwtTokenManager jwtTokenManager;
 
 
-    public AuthService(IAuthRepository repository, IUserManager userManager, CreateProfileProducer createProfileProducer) {
+    public AuthService(IAuthRepository repository, IUserManager userManager, CreateProfileProducer createProfileProducer, JwtTokenManager jwtTokenManager) {
         super(repository);
         this.repository = repository;
         this.userManager = userManager;
         this.createProfileProducer = createProfileProducer;
+        this.jwtTokenManager = jwtTokenManager;
     }
     /**
      * Register a new user
@@ -76,7 +79,7 @@ public class AuthService extends ServiceManager<Auth,Long> {
         );
         return true;
     }
-    public Boolean login(DoLoginRequestDto dto){
+    public String login(DoLoginRequestDto dto){
         Optional<Auth> auth = repository.findOptionalByUsernameAndPassword(dto.getUsername(),dto.getPassword());
         /**
          * DİKKAT!!! burada iki yolumuz var;
@@ -87,7 +90,11 @@ public class AuthService extends ServiceManager<Auth,Long> {
          * 2- Auth bilgisini sorgulayarak kullabıcı yok ise ya da bilgileri yanlış ise exception fırlatabiliriz.
          */
         if(auth.isEmpty()) throw new AuthException(ErrorType.DOLOGIN_INVALID_USERNAME_PASSWORD);
-        return true;
+        Optional<String> token = jwtTokenManager.createToken(auth.get().getId());
+        if(token.isEmpty()){
+            throw new AuthException(ErrorType.BAD_REQUEST_ERROR);
+        }
+        return token.get();
     }
 
     public Optional<Auth> loginAlternatif(DoLoginRequestDto dto){

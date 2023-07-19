@@ -6,10 +6,8 @@ import com.sosyalmedya.repository.entity.User;
 import com.sosyalmedya.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,8 +18,18 @@ import static com.sosyalmedya.constants.RestApiList.*;
 @RequestMapping(USER)
 public class UserController {
     private final UserService userService;
+    @GetMapping("/merhaba")
+    @PreAuthorize("hasAnyAuthority('USER','AHMET_DAYI')")
+    public ResponseEntity<String> getMerhaba(){
+        return ResponseEntity.ok("Merhaba bu  USER Role ile girilen bir servisidir");
+    }
 
+    @GetMapping("/hello")
+    public ResponseEntity<String> getHello(){
+        return ResponseEntity.ok("Merhaba bu servis USER servisidir");
+    }
     @PostMapping(SAVE)
+    @CrossOrigin("*")
     public ResponseEntity<UserSaveResponseDto> save(@RequestBody UserSaveRequestDto dto) {
         userService.save(dto);
         return ResponseEntity.ok(UserSaveResponseDto.builder()
@@ -31,8 +39,9 @@ public class UserController {
     }
 
     @PostMapping(FINDALL)
-    public ResponseEntity<List<User>> findAll() {
-        return ResponseEntity.ok(userService.findAll());
+    @CrossOrigin("*")
+    public ResponseEntity<List<User>> findAll(String token) {
+        return ResponseEntity.ok(userService.findAll(token));
     }
 
 }

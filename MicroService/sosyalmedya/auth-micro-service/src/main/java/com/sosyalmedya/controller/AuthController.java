@@ -25,8 +25,14 @@ public class AuthController {
     private final AuthService authService;
     private final CreateProfileProducer createProfileProducer;
 
+    @GetMapping("/hello")
+    public ResponseEntity<String> getHello() {
+        return ResponseEntity.ok("Merhaba bu servis AUTH servisidir");
+    }
+
     @GetMapping("/testrabbit")
-    public ResponseEntity<Void> testRabbitSendMessage(String username,String email,Long authid) {
+    @CrossOrigin("*")
+    public ResponseEntity<Void> testRabbitSendMessage(String username, String email, Long authid) {
         createProfileProducer.sendCreateProfileMessage(
                 CreateProfile.builder()
                         .authId(authid)
@@ -38,24 +44,19 @@ public class AuthController {
     }
 
     @PostMapping(LOGIN)
+    @CrossOrigin("*")
     public ResponseEntity<DoLoginResponseDto> doLogin(@RequestBody @Valid DoLoginRequestDto dto) {
-        Boolean isLogin = authService.login(dto);
+        String token = authService.login(dto);
+        return ResponseEntity.ok(DoLoginResponseDto.builder()
+                .status(200)
+                .result("Giriş İşlemi Başarılı")
+                .token(token)
+                .build());
 
-        if (isLogin) {
-            return ResponseEntity.ok(DoLoginResponseDto.builder()
-                    .status(200)
-                    .result("Giriş İşlemi Başarılı")
-                    .build());
-        }
-        return ResponseEntity.badRequest().body(
-                DoLoginResponseDto.builder()
-                        .status(400)
-                        .result("Giriş işlemi başarısız oldu . Bilgileri kontorl edin.")
-                        .build()
-        );
     }
 
     @PostMapping(REGISTER)
+    @CrossOrigin("*")
     public ResponseEntity<DoRegisterResponseDto> doRegister(@RequestBody @Valid DoRegisterRequestDto dto) {
         Boolean isRegister = authService.register(dto);
         if (isRegister) {
