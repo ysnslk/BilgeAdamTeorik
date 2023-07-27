@@ -1,0 +1,53 @@
+# Burada versiyon belirtilir.
+# Versiyonu bulmak için 
+apiVersion: apps/v1
+kind: Deployment # Oluşturmak istediğimiz k8s(kubernates) objesinin adını yazıyoruz.
+# Bir k8s objesinin iki temel bileşeni olur.
+# 1- metadata, temel olarak objenin adını içerir başka özelliklerde objeye göre eklenebilir.
+# 2- spec, bir objesi oluşturan tüm özelliklerini tamamını içerir.
+metadata:
+  name: deployment-postgresql
+# Özellikler objeye göre değişiklik gösterir. Bu nedenle biz şuan deployment objesi için açıklama yapıyoruz.
+# selector -> örnek temayı seçebilmek ve izlemek için kullanılır.
+# template -> Deployment objesinin oluşturacağı podların özelliklerini barındırır. İzlemek için label kullanılır.
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deployment-pod-label-postgresql
+  template:
+    # Burada tanımlanması gereken şey bir Pod objesidir. Bu nedenle buna ait bilgiler işlenir.
+    metadata:
+      labels:
+        # Etiket deployment objesinin podu takip edebilmesi için gereklidir. Key / Value şeklinde 
+        # istenilen paremetrelerle tanımlanabilir. Birden fazla etiket tanımlanabilir.
+        app: deployment-pod-label-postgresql
+        ahmet-amca-nasilsin: iyidir-sen-nasilsin
+    spec: 
+      # Pod u oluşturan özellikleri buraya yazıyoruz.
+      containers: 
+      # Bir pod bir bilgisayar gibi düşünülürse içinde birden çok program ve işletim sistemi olabilir.
+      # dikkat etti iseniz container(s) kullanılmış.
+      # ancak bu tercih ettiğimiz birşey değildir, microservis yapımıza ters düşer.
+      - name: postgresql  # pod objesinin adıdır. get pods yazdığınızda göreceğiniz addır.
+        #image, hub.docker ya da herhangi bir repoda olan docker container imajının adıdır. Buraya yazılmalıdır.
+        image: postgres
+        # Bu pod için kullanım sınırlarını ve gerekliliklerini belirliyoruz.
+        resources:
+          # Gereksinimleri belirtir. Eğer karşılayacak sistem kaynağı yok ise pod oluşturmaz. 
+          # olarak adlandırılabilir.
+          requests: 
+            cpu: "300m" # Bir işlemci vCpu-> 4 olsun bu 4000M e sahipsiniz demektir.
+            memory: "1024Mi" # Bir ram alanı 32 GB olsun . Bu durumda 32000Mi ye sahipsiniz demektir.
+          limits: # Mutlaka bir pod un kullanabileceği maksimum sınırları belirtmelisiniz.
+            cpu: "500m"
+            memory: "2048Mi"  
+        # ilgili imajın yayınlanmaya ihtiyaç duyduğu portları yazıyorsunuz. 
+        # Bu bilgileri imajı aldığımız yerden ulaşanilirsiniz. hub.docker.com    
+        ports: 
+        - containerPort: 5432
+        # Burası imaajın ihtiyaç duyduğu environment variable (ortam değişkenleri)
+        # ihtiyaç olduğu kadar yazılabilir.
+        env:
+          - name: POSTGRES_PASSWORD
+            value: root
