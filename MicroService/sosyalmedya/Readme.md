@@ -36,6 +36,14 @@
     - RabbitMQ'ya JAVA içinden bağlanmak için aşağıdaki linki kullanabilirsiniz
     localhost:15672
 
+# REDIS eklemek için gerekli işlemler
+
+    - docker run --name bilgejavaredis -p 6379:6379 -d redis
+    DİKKAT!!!!!!
+    redis bağlantılarını ayarlamak için gerekli olan kodlamaları yaparken host ve portu
+    gereklidir. Ancak bu bilgilerin direkt kod içine yazmak yerine application.yml üzerinden girmek 
+    almak daha mantıklıdır. Böylece enviroment variable ile deploy içinde bu buildleri alabiliriz.
+
 # PROJENİN DEPLOY ADIMLARI
 
     1- UYgulamanın gradle ile build edilmesi gereklidir.

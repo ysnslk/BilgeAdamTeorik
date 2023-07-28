@@ -37,7 +37,7 @@ public class UserSecurityConfig {
          * DİKKAT!! kişi kullanıcı adı şifresi ya da jwt ile giriş yapsa bile eğer belirtilen yolu yoksa giriş yapamaz.
          */
         httpSecurity.authorizeHttpRequests(req ->
-                req.requestMatchers("/api/v1/user/hello") // requestMatchers isteklern endpoint pathlerin tanımlandığı
+                req.requestMatchers("/api/v1/user/hello","/swagger-ui/**","/v3/api-docs/**") // requestMatchers isteklern endpoint pathlerin tanımlandığı
                         .permitAll() // Herkese Açık
                         .requestMatchers("/api/v1/user/**") // localhost:9092/api/v1/user/[herhangi bir istek]
                         .hasAuthority("USER") // User Rolüne sahip olmalı

@@ -21,6 +21,7 @@ public class JwtFilter extends OncePerRequestFilter {
     JwtTokenManager jwtTokenManager;
     @Autowired
     JwtUser jwtUser;
+
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
@@ -41,19 +42,19 @@ public class JwtFilter extends OncePerRequestFilter {
          *   Burada dikkat ederseniz Header içinde token bilgileri Authorization KEY ile gelir bu nedenle header içinde
          *   bu KEY in VALUE bilgisini almamız ve içinden token 2 ayırmamız gereklidir.
          */
-        final String authorizationHeader =  request.getHeader("Authorization");
-        if(authorizationHeader!= null && authorizationHeader.startsWith("Bearer ")){ // Başlık dolumu ve Bearer ile başlıyor mu?
+        final String authorizationHeader = request.getHeader("Authorization");
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) { // Başlık dolumu ve Bearer ile başlıyor mu?
             String token = authorizationHeader.substring(7); // Token bilgisini çek
             Optional<Long> authId = jwtTokenManager.getByIdFromToken(token);
-            if (authId.isEmpty()){
+            if (authId.isEmpty()) {
                 throw new UserException(ErrorType.INVALID_TOKEN); // Token geçersiz ise hata fırlat
             }
             UserDetails userDetails = jwtUser.getUserByAuthId(authId.get());
             UsernamePasswordAuthenticationToken userSpringToken =
-                    new UsernamePasswordAuthenticationToken(userDetails,null,userDetails.getAuthorities());
+                    new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(userSpringToken);
         }
-        filterChain.doFilter(request,response);
+        filterChain.doFilter(request, response);
 
     }
 }

@@ -44,4 +44,9 @@ public class UserController {
         return ResponseEntity.ok(userService.findAll(token));
     }
 
+
+    @PostMapping("/uppercase")
+    public ResponseEntity<String> upperCase(String ad){
+        return ResponseEntity.ok(userService.toUpper(ad));
+    }
 }

@@ -7,6 +7,7 @@ import com.sosyalmedya.repository.IUserRepository;
 import com.sosyalmedya.repository.entity.User;
 import com.sosyalmedya.utility.JwtTokenManager;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,5 +34,22 @@ public class UserService {
            throw new UserException(ErrorType.INVALID_TOKEN);
        }
         return repository.findAll();
+    }
+
+    /**
+     * ad 0 muhammet -> MUHAMMET
+     * Cache -> redis üzerinde
+     * @param ad
+     * @return
+     */
+    @Cacheable(value = "upperCase")
+    public String toUpper(String ad){
+        String upperCaseName = ad.toUpperCase();
+        try {
+            Thread.sleep(3000L);
+        }catch (InterruptedException e){
+            System.out.println("HATA");
+        }
+        return upperCaseName;
     }
 }
